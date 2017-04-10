@@ -1,0 +1,14 @@
+#DefaultContentLanguage = "nl"
+languageCode = "nl-nl"
+theme="hugo-theme-learn"
+title = "Perinatologie.nl developer documentatie"
+baseURL = "https://doc.perinatologie.nl/"
+
+[Languages]
+[Languages.en]
+title = "Perinatologie.nl documentation"
+weight = 1
+
+[Languages.nl]
+title = "Perinatologie.nl documentatie"
+weight = 2

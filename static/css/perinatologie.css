@@ -1,0 +1,35 @@
+#header-wrapper  {
+	background-color: #f0f0f0 !important;
+	border-bottom: 2px solid rgba(137, 194, 121, 1) !important;
+
+}
+
+#header-wrapper h1 {
+	color: rgba(137, 194, 121, 1) !important;
+	font-size: 100%;
+	margin: 0px;
+	font-weight: bold;
+}
+
+#header-wrapper h2 {
+	color: #c0c0c0 !important;
+	font-size: 100%;
+	margin: 0px;
+}
+
+a.nav i, a.highlight {
+	color: rgba(137, 194, 121, 1);
+}
+
+.ps-theme-default {
+	background-color: rgba(137, 194, 121, 0.5) !important;
+}
+
+.copy-to-clipboard {
+	display: none !important;
+}
+
+code {
+	background-color: #f0f0f0;
+	border: 1px solid #808080;
+}

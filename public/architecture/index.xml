@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Architectures on My blog</title>
+    <link>http://doc.perinatologie.nl/architecture/index.xml</link>
+    <description>Recent content in Architectures on My blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>nl-nl</language>
+    <atom:link href="http://doc.perinatologie.nl/architecture/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>PeriHub Architectuur</title>
+      <link>http://doc.perinatologie.nl/architecture/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/architecture/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Inleiding</title>
+      <link>http://doc.perinatologie.nl/architecture/introduction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/architecture/introduction/</guid>
+      <description>&lt;p&gt;Dit document beschrijft op hoog niveau de architectuur van de Hub v3.&lt;/p&gt;
+
+&lt;p&gt;In de volgende hoofdstukken worden de volgende concepten toegelicht:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Accounts, en de verschillende account typen (organization, user en apikey)&lt;/li&gt;
+&lt;li&gt;Resources, Resource Typen en Resource Shares&lt;/li&gt;
+&lt;li&gt;Providers&lt;/li&gt;
+&lt;li&gt;Tokens&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Deze informatie is relevant voor:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Software ontwikkelaars tbv implementatie van Hub v3 ondersteuning in applicaties&lt;/li&gt;
+&lt;li&gt;Hub beheerders&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Voor meer technische details tbv het implementatie in software applicaties verwijzen we naar het document:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Hub v3 - Implementatie handleiding
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Accounts</title>
+      <link>http://doc.perinatologie.nl/architecture/accounts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/architecture/accounts/</guid>
+      <description>
+
+&lt;h2 id=&#34;accounts&#34;&gt;Accounts&lt;/h2&gt;
+
+&lt;p&gt;Alle interactie met de PeriHub verloopt via “Accounts”. Een account kan worden aangevraagd via de website:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.perinatologie.nl&#34;&gt;https://www.perinatologie.nl&lt;/a&gt; (rechtsbovenin “aanmelden”)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;account-typen-user-organization-api-key&#34;&gt;Account Typen: User, Organization, API Key&lt;/h2&gt;
+
+&lt;p&gt;Er zijn 3 typen Hub Accounts:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;User&lt;/strong&gt;: Een User Account is een persoonlijk account voor bijvoorbeeld een zorgverlener, client of medewerker. Met een User Account kan bijvboorbeeld worden ingelogged op bepaalde diensten van Perinatologie.nl&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Organization&lt;/strong&gt;: Een Organization Account betreft een Praktijk, Ziekenhuis, Kraamzorg bureau, of andere typen organisaties. Een organisatie kan niet direct inloggen, maar is altijd gekoppeld aan een of meerdere User Accounts. Een organisatie kan dus meerdere user accounts bevatten, en 1 user kan deel uitmaken van meerdere organisaties. Elk van deze “Users” heeft toegang tot resources (zoals bv dossiers) die gedeeld zijn met de organisatie.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;API Key&lt;/strong&gt;: Een API Key Account is nodig voor een applicatie om gebruik te maken van de Hub APIs. Een API Key is, net als een User Account, gekoppeld aan een Organisatie Account. Middels het API Key Account kan een applicatie inzage krijgen in de Resources die gedeeld zijn met de betreffende Organisatie.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Resources</title>
+      <link>http://doc.perinatologie.nl/architecture/resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/architecture/resources/</guid>
+      <description>
+
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+
+&lt;p&gt;Op de Hub kunnen accounts (Organizations en Users) “Resources” aanmelden op de Hub. Vervolgens kunnen deze resources worden gedeeld met andere Hub Accounts.&lt;/p&gt;
+
+&lt;h2 id=&#34;resource-types&#34;&gt;Resource types&lt;/h2&gt;
+
+&lt;p&gt;Elke Resource heeft een Resource Type. Het Type geeft aan wat voor soort Resource het betreft. Aanmelders zijn vrij te bepalen welke typen ze aanmelden, maar samenwerkende partijen kunnen afspraken maken over welke typen ze ondersteunen.
+Resource typen: perinatologie/dossier en hub/dossier
+Het eerste Resource Type waarvoor deze afspraken zijn gemaakt via het Perinatologie.nl platform is het type “perinatologie/dossier”, wat een zwangerschaps dossier beschrijft. De opvolger hiervan is het type “hub/dossier”. Deze is met betrekking tot resource eigenschappen identiek.&lt;/p&gt;
+
+&lt;p&gt;Deze resources bevatten de volgende eigenschappen:&lt;/p&gt;
+
+&lt;p&gt;Zwangerschap gerelateerde elementen:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;reference&lt;/strong&gt;: Unieke referentie voor een zwangerschap van 1 client&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;gravida&lt;/strong&gt;: De graviditeit van de zwangerschap&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;para&lt;/strong&gt;: De pariteit van de zwangerschap&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;start_at&lt;/strong&gt;: intake datum bij de provider&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;end_at&lt;/strong&gt;: eind datum indien van toepassing&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;edd&lt;/strong&gt;: Aterme datum&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Client gerelateerde elementen:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;client_displayname&lt;/strong&gt;: Volledige client naam&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;client_bsn&lt;/strong&gt;: Burger Service Nummer van de client.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;client_birthdate&lt;/strong&gt;: Geboortedatum van de client&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Automatische elementen:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;registered_at&lt;/strong&gt;: Aanmeld datum op de hub&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;provider_accountname&lt;/strong&gt;: account naam van de provider&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;resource-shares&#34;&gt;Resource shares&lt;/h2&gt;
+
+&lt;p&gt;Een aangemelde Resource kan via de Hub gedeeld worden met andere Hub Accounts.&lt;/p&gt;
+
+&lt;p&gt;Enkele voorbeelden:&lt;/p&gt;
+
+&lt;p&gt;Een verloskundige praktijk (organization account) kan een dossier (resource type peri/dossier) delen met een ziekenhuis (organization account).
+Een ziekenhuis (organization account) kan een dossier (resource type peri/dossier) delen met verschillende verloskundige praktijken (organization accounts) in de regio.
+Een verloskundige praktijk (organization account) kan een dossier delen met een client (user account).
+Een client (user account) kan haar eigen dossier delen met een huisartsenpraktijk (organization account).
+Een verloskundige praktijk (organization account) kan een dossier delen met een kraamzorg buro (organization account).
+… etc&lt;/p&gt;
+
+&lt;p&gt;Een Resource kan gedeeld worden met een of meerdere andere accounts. Hetzelfde dossier kan dus zowel gedeeld worden met bijvoorbeeld een ziekenhuis, een kraamzorg buro als een client.&lt;/p&gt;
+
+&lt;p&gt;Een resource heeft altijd 1 Provider. De Provider is het account welke de resource heeft aangemeld op de hub, en is daarmee eigenaar van het dossier. Andere accounts waarmee de resource is gedeeld kunnen de data van deze resource opvragen bij de Provider mbv een “token” welke wordt uitgegeven door de Hub.&lt;/p&gt;
+
+&lt;p&gt;Een Provider kan Resources delen door tijdens de aanmelding een lijst van Identifiers en Identifier Types mee te geven zodat de Hub kan achterhalen om welke accounts het gaat. Geldige Identifier Types zijn bijvoorbeeld accountNames, AGB codes of accountUuids.&lt;/p&gt;
+
+&lt;h2 id=&#34;resource-providers&#34;&gt;Resource providers:&lt;/h2&gt;
+
+&lt;p&gt;Organisaties die resources op de PeriHub aanmelden zijn de Provider van deze resource. Tijdens aanmelding geven Providers slechts een beperkte hoeveelheid ‘meta-data’ door aan de Hub (zie Resource Types). De PeriHub bevat niet de daadwerkelijke bron-data van een bepaalde resource, alleen de data die van toepassing is op het Resource Type.&lt;/p&gt;
+
+&lt;p&gt;Om de bron-data te verkrijgen bevraagt de aanvrager eerst de Hub. De Hub geeft de meta-data van de zoekresultaten terug zoals deze bekend zijn in de hub. Daarnaast bevat het zoekresultaat informatie die de bevrager kan gebruiken om direct bij de Provider van het Resource de bron-data op te vragen.&lt;/p&gt;
+
+&lt;p&gt;De Hub bevat op deze manier nooit de volledige informatie, en de bevrager krijgt altijd de meest actuele data terug precies zoals deze op dat moment is vastgelegd bij de Provider.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Resources registreren</title>
+      <link>http://doc.perinatologie.nl/architecture/register/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/architecture/register/</guid>
+      <description>&lt;p&gt;Een Provider kan een nieuw resource aanmelden op de Hub ovv het Resource Type en aanvullende meta-data (Resource Properties) zoals bijvoorbeeld &lt;code&gt;client_bsn&lt;/code&gt;, &lt;code&gt;gravida&lt;/code&gt;, etc.&lt;/p&gt;
+
+&lt;p&gt;Tegelijkertijd bevat de aanmelding een lijst van &lt;a href=&#34;http://doc.perinatologie.nl/architectuur/resources/#resource-shares&#34;&gt;Resource Shares&lt;/a&gt;: Een lijst van identifiers van accounts waarmee het Resource gedeeld moet worden. Als Identifiers kunnen verschillende Identifier Types worden meegestuurd waarmee de Hub de accounts kan vinden. Veelal is dit een accountName, accountUuid of AGB code.&lt;/p&gt;
+
+&lt;p&gt;Elk Hub Account kan meerdere Identifiers bevatten waardoor deze gevonden kunnen worden.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Resources zoeken</title>
+      <link>http://doc.perinatologie.nl/architecture/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/architecture/search/</guid>
+      <description>&lt;p&gt;Als eerste stuurt de bevrager een verzoek aan de Hub om resources te vinden welke gedeeld zijn met de bevrager. De bevrager kan zoeken op alle resource eigenschappen. In het geval van een hub/dossier zal dit veelal zijn obv &lt;code&gt;client_bsn&lt;/code&gt; en &lt;code&gt;reference&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;De zoekresultaten bevatten alle dossiers die gedeeld zijn met de accounts van de bevrager.
+Elk resultaat bevat ook een provider URL en een Token.&lt;/p&gt;
+
+&lt;p&gt;Via deze URL en het Token kan de bevrager direct bij de Provider van het Resource de meest actuele bron-data ophalen.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tokens</title>
+      <link>http://doc.perinatologie.nl/architecture/tokens/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/architecture/tokens/</guid>
+      <description>&lt;p&gt;Wanneer een account de PeriHub bevraagt dan zijn de zoekresultaten voorzien van een Token (JWT - JSON Web Token). Dit token kan de bevrager gebruiken om de bron-data bij de Provider van het Resource op te vragen.&lt;/p&gt;
+
+&lt;p&gt;Het Token is cryptografisch ondertekend met de private key van de Hub (middels RS512).&lt;/p&gt;
+
+&lt;p&gt;Door het Token door te geven aan de provider kan de provider mbv de public key van de Hub valideren dat het token daadwerkelijk is uitgegeven door de hub.&lt;/p&gt;
+
+&lt;p&gt;Het token bevat een beperkte geldigheidsduur waardoor de bron-data alleen vlak na bevraging kan worden opgehaald. Verder bevat het token enkele “claims” waardoor de provider kan controleren om welke data het specifiek gaat. Zo kan een token voor 1 resource niet gebruikt worden om andere resources bij dezelfde provider op te halen.&lt;/p&gt;
+
+&lt;p&gt;Meer informatie mbt JWT:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://jwt.io&#34;&gt;https://jwt.io&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

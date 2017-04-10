@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Formats on My blog</title>
+    <link>http://doc.perinatologie.nl/format/index.xml</link>
+    <description>Recent content in Formats on My blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>nl-nl</language>
+    <atom:link href="http://doc.perinatologie.nl/format/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Formaat en Dataset</title>
+      <link>http://doc.perinatologie.nl/format/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/format/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Inleiding</title>
+      <link>http://doc.perinatologie.nl/format/introduction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/format/introduction/</guid>
+      <description>&lt;p&gt;Dit document wordt het document formaat en dataset voor resources van het type &lt;code&gt;hub/dossier&lt;/code&gt; beschreven.&lt;/p&gt;
+
+&lt;p&gt;Op de Hub heeft elk aangemelde resource (dossier) een bepaald type.&lt;/p&gt;
+
+&lt;p&gt;In de uitwisseling tussen software leveranciers wordt hier met name het type &lt;code&gt;hub/dossier&lt;/code&gt; aangemeld. De voorganger &lt;code&gt;perinatologie/dossier&lt;/code&gt; leek hier veel op, maar het hub/dossier type is uniformer en consistenter, en bied daarnaast de mogelijkheid te communiceren obv gestandaardiseerde dataelementen vanuit bijvoorbeeld de peri22 dataset.&lt;/p&gt;
+
+&lt;p&gt;Dit type document omvat een zeer eenvoudige structuur in vergelijking met bv HL7 berichten.
+Het bied de mogelijkheid om data elementen te benoemen volgens afgesproken codes (ovv element id), maar bied daarnaast ook de vrijheid om nieuwe codes toe te voegen, of zelfs volledig achterwege te laten, terwijl ontvangende applicaties hier toch mee overweg kunnen blijven gaan.&lt;/p&gt;
+
+&lt;p&gt;Deze informatie is relevant voor:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Software ontwikkelaars tbv implementatie van Hub v3 ondersteuning in applicaties&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Voor meer technische details tbv het implementatie in software applicaties verwijzen we naar het document:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Hub v3 - Implementatie handleiding&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Deze informatie is relevant voor:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Software ontwikkelaars tbv implementatie van PeriHub ondersteuning in applicaties.&lt;/li&gt;
+&lt;li&gt;Dataset beheerders&lt;/li&gt;
+&lt;li&gt;Onderzoekers&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Github projecten</title>
+      <link>http://doc.perinatologie.nl/format/github/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/format/github/</guid>
+      <description>
+
+&lt;p&gt;De dataset definities worden als open-source projecten beheerd via &lt;a href=&#34;https://github.com&#34;&gt;github.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Doelen:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Alle deelnemers hebben altijd toegang tot de laatste versie van de definities.&lt;/li&gt;
+&lt;li&gt;Iedereen is in staat aanvullingen en/of correcties in te sturen via een &lt;a href=&#34;https://help.github.com/articles/about-pull-requests/&#34;&gt;Github Pull Request&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Versie beheer&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Hiervoor zijn 2 repositories beschikbaar:&lt;/p&gt;
+
+&lt;h2 id=&#34;perinatologie-realm-peri22&#34;&gt;perinatologie/realm-peri22&lt;/h2&gt;
+
+&lt;p&gt;Deze repository bevat de dataset definities zoals gepubliceerd door Nictiz via &lt;a href=&#34;http://decor.nictiz.nl/perinatologie/&#34;&gt;http://decor.nictiz.nl/perinatologie/&lt;/a&gt;, getransformeerd
+naar &lt;a href=&#34;realm&#34;&gt;realm&lt;/a&gt; formaat.&lt;/p&gt;
+
+&lt;p&gt;De repository bevat update-scripts welke gebruikt kunnen worden om nieuwe publicaties
+te downloaden en opnieuw genereren.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Link: &lt;a href=&#34;https://github.com/perinatologie/realm-peri22&#34;&gt;https://github.com/perinatologie/realm-peri22&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Viewer: &lt;a href=&#34;https://dataset.perinatologie.nl/peri22&#34;&gt;https://dataset.perinatologie.nl/peri22&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;perinatologie-realm-peri22x&#34;&gt;perinatologie/realm-peri22x&lt;/h2&gt;
+
+&lt;p&gt;Deze repository bevat alle uitbreidingen op peri22 die nodig zijn binnen de PeriHub infrastructuur.&lt;/p&gt;
+
+&lt;p&gt;Zie de bijbehorende README.md voor inhoudelijke details.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Link: &lt;a href=&#34;https://github.com/perinatologie/realm-peri22x&#34;&gt;https://github.com/perinatologie/realm-peri22x&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Viewer: &lt;a href=&#34;https://dataset.perinatologie.nl/peri22x&#34;&gt;https://dataset.perinatologie.nl/peri22x&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Elementen</title>
+      <link>http://doc.perinatologie.nl/format/elements/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/format/elements/</guid>
+      <description>
+
+&lt;h2 id=&#34;het-resource-element&#34;&gt;Het &lt;code&gt;resource&lt;/code&gt; element&lt;/h2&gt;
+
+&lt;p&gt;Binnen dit element bestaan de volgende attributen:
+* type (verplicht): het type resource. Meest voorkomende waarde &lt;code&gt;hub/dossier&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Dit element is het root element van een hub resource document.&lt;/p&gt;
+
+&lt;h2 id=&#34;het-section-element&#34;&gt;Het &lt;code&gt;section&lt;/code&gt; element&lt;/h2&gt;
+
+&lt;p&gt;Binnen het root &lt;code&gt;resource&lt;/code&gt; element bestaan een of meerdere &lt;code&gt;section&lt;/code&gt; elementen.
+Dit wordt gebruikt om een document onder te verdelen in logische onderdelen.&lt;/p&gt;
+
+&lt;p&gt;Enkele voorbeeld section types:
+* client: client informatie zoals naam, adres, woonplaats
+* intake: uitgebreide intake gegevens
+* zwangerschap.consult: een zwangerschaps consult, kan 0, 1 of meerdere keren voorkomen.
+* baring.consult: baring consult gegevens, kan 0, 1 of meerdere keren voorkomen.&lt;/p&gt;
+
+&lt;p&gt;Waar nodig kunnen deze typen na overeenkomst deelnemers worden aangevuld.&lt;/p&gt;
+
+&lt;p&gt;Dit element bevat de volgende attributen&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Id (verplicht): unieke id voor deze section binnen 1 resource.&lt;/li&gt;
+&lt;li&gt;type (optioneel): het type section. Voor weergave is dit attribuut niet vereist. Wanneer gegevens overgenomen of “inline” in een dossier getoond dienen te worden, dan is dit attribuut wel nodig.&lt;/li&gt;
+&lt;li&gt;label (verplicht): Tbv weergave doeleinden.&lt;/li&gt;
+&lt;li&gt;uuid (optioneel): Wanneer het record binnen het systeem van de verzender een eenduidige unieke identificatie heeft kan dit attribuut worden ingevuld. Alleen nodig igv van overname gegevens, om duplicatie tegen te gaan.&lt;/li&gt;
+&lt;li&gt;createStamp (verplicht): wanneer het record is aangemaakt in betreffend record/section in bron systeem. Tbv weergave doeleinden. Bevat een unix timestamp.&lt;/li&gt;
+&lt;li&gt;updateStamp (optioneel): laatste wijziging van betreffende record/section in bron systeem. Bevat een unix timestamp.&lt;/li&gt;
+&lt;li&gt;effectStamp (optioneel): moment waarop deze section betrekking heeft. Bij een consult is dit bijvoorbeeld de consult-datum. Bevat een unix timestamp.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;het-value-element&#34;&gt;Het &lt;code&gt;value&lt;/code&gt; element&lt;/h2&gt;
+
+&lt;p&gt;Binnen de &lt;code&gt;section&lt;/code&gt; elementen bestaan een of meerdere &lt;code&gt;value&lt;/code&gt; elementen.
+De value elementen bevatten de daadwerkelijke gegevens.&lt;/p&gt;
+
+&lt;p&gt;Dit element bevat de volgende attributen
+* label (verplicht): Label voor weergave doeleinden.
+* value (verplicht): De waarde zoals geregistreerd in het bronsysteem. Wanneer het om een codelijst gaat staat hier de code (niet de tekst representatie).
+* displayValue (optioneel): Waarde tbv weergave eindgebruiker. Wanneer de value een code betreft staat hier de voluit geschreven waarde. Wanneer dit attribuut leeg is zal de originele &lt;code&gt;value&lt;/code&gt; worden getoond. In geval van tekst values kan dit veld daarom ook worden leeg gelaten.
+* concept (optioneel): verwijzing naar gestandaardiseerd data element. Vul hier bv &lt;code&gt;peri22-dataelement-10030&lt;/code&gt; in wanneer er een BSN gecommuniceerd wordt. Alleen nodig indien het doel is om gegevens over te nemen/verwerken. Voor dossier weergave is dit veld niet vereist.
+* keyid (optioneel): verwijzing naar key id’s in spreadsheet “Dataset overzicht aansluting Hub”. Wij proberen de keyid’s uit te faseren en in plaats hiervan alleen gebruik te maken van het concept attribuut.&lt;/p&gt;
+
+&lt;h2 id=&#34;concept-keyid-of-allebij&#34;&gt;concept, keyid, of allebij?&lt;/h2&gt;
+
+&lt;p&gt;Het doel van de &lt;code&gt;concept&lt;/code&gt; en &lt;code&gt;keyid&lt;/code&gt; attributen zijn vergelijkbaar. Deelnemers volgen zoveel mogelijk gestandaardiseerde data elementen door gebruik te maken van het &lt;code&gt;concept&lt;/code&gt; attribuut en hier &lt;code&gt;peri-dataelement-*&lt;/code&gt; id’s in te geven.&lt;/p&gt;
+
+&lt;p&gt;Tbv flexibele uitwisseling zijn er binnen het samenwerkingsverband in een vroeger tijdstip ook &lt;code&gt;keyid&lt;/code&gt;s afgesproken. Wanneer het voor beide leveranciers eenvoudiger is om een &lt;code&gt;keyid&lt;/code&gt; te communiceren ipv (of naast) een &lt;code&gt;concept&lt;/code&gt;, dan blijft deze optie bestaan.&lt;/p&gt;
+
+&lt;p&gt;Maar het advies is om vooral gebruik te maken van het &lt;code&gt;concept&lt;/code&gt; attribuut. Zowel &lt;code&gt;keyid&lt;/code&gt; als &lt;code&gt;concept&lt;/code&gt; kunnen worden ingegeven wanneer deze bekend zijn, en aansluiten.&lt;/p&gt;
+
+&lt;p&gt;Er wordt gewerkt aan een mapping tabel tussen keyids en elementen uit de peri22- dataset waar een een-op-een mapping mogelijk is.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;repeat-ids&#34;&gt;Repeat IDs&lt;/h2&gt;
+
+&lt;p&gt;Er zijn situaties te bedenken waarin een value binnen 1 section meerdere malen voorkomt. Denk bijvoorbeeld aan een section &lt;code&gt;zwangerschap.consult&lt;/code&gt; bij een meerling. Dan kan de value voor ligging 2 keer voorkomen (1 per foetus). Voeg in dat geval een attribuut &lt;code&gt;repeatid&lt;/code&gt; toe aan elk betreffend value element, beginnend bij 0, oplopend per value element van zelfde type (obv keyid of element attribuut).&lt;/p&gt;
+
+&lt;p&gt;Bijvoorbeeld zwangerschaps consult voor een meerling:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;section type=”zwangerschap.consult”&amp;gt;
+  &amp;lt;value
+    label=”AM duur”
+    value=”20+3”
+    concept=”peri22-dataelement-82316”
+    keyid=”amduur” /&amp;gt;
+  &amp;lt;value
+    label=”IUVD”
+    value=”nee”
+    concept=”peri22-dataelement-20410”
+    repeat=”0” /&amp;gt;
+  &amp;lt;value
+    label=”IUVD”
+    value=”nee”
+    concept=”peri22-dataelement-20410”
+    repeat=”1” /&amp;gt;
+&amp;lt;/section&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Structuur</title>
+      <link>http://doc.perinatologie.nl/format/structure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/format/structure/</guid>
+      <description>&lt;p&gt;Dit formaat bevat 1 client element, met daarbinnen een reeks ‘value’ elementen, welke informatie over de client bevatten.&lt;/p&gt;
+
+&lt;p&gt;Elke value element bevat een &lt;code&gt;label&lt;/code&gt; attribuut (tbv eenvoudige weergave), een daadwerkelijke &lt;code&gt;value&lt;/code&gt; attribuut, en in veel gevallen een “keyid”.&lt;/p&gt;
+
+&lt;p&gt;Om de informatie te tonen volstaat het dus om door de value elementen te lopen, en ovv label en value de informatie aan de gebruiker te tonen.&lt;/p&gt;
+
+&lt;p&gt;Voor verdere integratie is er de mogelijkheid om de labels te negeren, en te kijken naar de keyids. Obv de keyid kan er een mapping worden gemaakt daar velden in het ontvangende systeem, om hiermee de locale informatie bij te werken.&lt;/p&gt;
+
+&lt;p&gt;Binnen elk client element zit 1 &lt;code&gt;eocs&lt;/code&gt; element, met hier binnen een of meerdere &lt;code&gt;eoc&lt;/code&gt; (episode of care) elementen.&lt;/p&gt;
+
+&lt;p&gt;Binnen deze eoc elementen zitten binnen het forms element weer een of meerdere form elementen. Deze form elementen worden gebruikt om de data per onderwerp te groeperen.&lt;/p&gt;
+
+&lt;p&gt;Ook hier kan ter weergave het label attribuut worden gebruikt, en optioneel voor verdere integratie obv keyid een mapping worden gedaan.&lt;/p&gt;
+
+&lt;p&gt;In de volgende hoofdstukken worden de volgende concepten toegelicht:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;resource: Elk bestand bevat 1 resource (document, dossier, zwangerschap).&lt;/li&gt;
+&lt;li&gt;section: Een resource bevat 1 of meerdere sections&lt;/li&gt;
+&lt;li&gt;value: Elke section bevat 1 of meerdere values&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Voorbeelden</title>
+      <link>http://doc.perinatologie.nl/format/examples/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/format/examples/</guid>
+      <description>&lt;p&gt;Op Github worden in de perinatologie/realm-peri22x repository in de directory &lt;code&gt;resources/&lt;/code&gt; een
+aantal voorbeeld bestanden beheerd en bijgewerkt naar de laatste stand van zaken.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Link: &lt;a href=&#34;https://github.com/perinatologie/realm-peri22x/tree/master/resources&#34;&gt;https://github.com/perinatologie/realm-peri22x/tree/master/resources&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>My blog</title>
+    <link>http://doc.perinatologie.nl/index.xml</link>
+    <description>Recent content on My blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>nl-nl</language>
+    <atom:link href="http://doc.perinatologie.nl/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Inleiding</title>
+      <link>http://doc.perinatologie.nl/architecture/introduction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/architecture/introduction/</guid>
+      <description>&lt;p&gt;Dit document beschrijft op hoog niveau de architectuur van de Hub v3.&lt;/p&gt;
+
+&lt;p&gt;In de volgende hoofdstukken worden de volgende concepten toegelicht:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Accounts, en de verschillende account typen (organization, user en apikey)&lt;/li&gt;
+&lt;li&gt;Resources, Resource Typen en Resource Shares&lt;/li&gt;
+&lt;li&gt;Providers&lt;/li&gt;
+&lt;li&gt;Tokens&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Deze informatie is relevant voor:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Software ontwikkelaars tbv implementatie van Hub v3 ondersteuning in applicaties&lt;/li&gt;
+&lt;li&gt;Hub beheerders&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Voor meer technische details tbv het implementatie in software applicaties verwijzen we naar het document:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Hub v3 - Implementatie handleiding
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Inleiding</title>
+      <link>http://doc.perinatologie.nl/format/introduction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/format/introduction/</guid>
+      <description>&lt;p&gt;Dit document wordt het document formaat en dataset voor resources van het type &lt;code&gt;hub/dossier&lt;/code&gt; beschreven.&lt;/p&gt;
+
+&lt;p&gt;Op de Hub heeft elk aangemelde resource (dossier) een bepaald type.&lt;/p&gt;
+
+&lt;p&gt;In de uitwisseling tussen software leveranciers wordt hier met name het type &lt;code&gt;hub/dossier&lt;/code&gt; aangemeld. De voorganger &lt;code&gt;perinatologie/dossier&lt;/code&gt; leek hier veel op, maar het hub/dossier type is uniformer en consistenter, en bied daarnaast de mogelijkheid te communiceren obv gestandaardiseerde dataelementen vanuit bijvoorbeeld de peri22 dataset.&lt;/p&gt;
+
+&lt;p&gt;Dit type document omvat een zeer eenvoudige structuur in vergelijking met bv HL7 berichten.
+Het bied de mogelijkheid om data elementen te benoemen volgens afgesproken codes (ovv element id), maar bied daarnaast ook de vrijheid om nieuwe codes toe te voegen, of zelfs volledig achterwege te laten, terwijl ontvangende applicaties hier toch mee overweg kunnen blijven gaan.&lt;/p&gt;
+
+&lt;p&gt;Deze informatie is relevant voor:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Software ontwikkelaars tbv implementatie van Hub v3 ondersteuning in applicaties&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Voor meer technische details tbv het implementatie in software applicaties verwijzen we naar het document:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Hub v3 - Implementatie handleiding&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Deze informatie is relevant voor:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Software ontwikkelaars tbv implementatie van PeriHub ondersteuning in applicaties.&lt;/li&gt;
+&lt;li&gt;Dataset beheerders&lt;/li&gt;
+&lt;li&gt;Onderzoekers&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Inleiding</title>
+      <link>http://doc.perinatologie.nl/implementation/introduction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/implementation/introduction/</guid>
+      <description>
+
+&lt;h2 id=&#34;inleiding&#34;&gt;Inleiding&lt;/h2&gt;
+
+&lt;p&gt;De Hub is een initiatief ter bevordering van het delen van gegevens in de geboortezorg. Om dit doel te bereiken staat de Hub open voor alle zorgaanbieders en software leveranciers.&lt;/p&gt;
+
+&lt;p&gt;Zorgaanbieders kunnen eenvoudig toegang tot de actuele versies van het dossier ontsluiten, direct vanuit hun software applicatie. Er wordt dus niet gewerkt met ‘berichten’, welke slechts een snapshot zijn van een bepaald moment. Middels de Hub kunnen vragende zorgaanbieders altijd de meest actuele gegevens raadplegen.&lt;/p&gt;
+
+&lt;h2 id=&#34;hoe-werkt-het&#34;&gt;Hoe werkt het?&lt;/h2&gt;
+
+&lt;p&gt;Het concept is erg eenvoudig: Er kunnen dossiers worden aangemeld en dossiers kunnen worden gezocht. Na het vinden van een betreffend dossier kunnen de actuele gegevens worden opgevraagd bij de bron.&lt;/p&gt;
+
+&lt;h3 id=&#34;dossiers-aanmelden&#34;&gt;Dossiers aanmelden&lt;/h3&gt;
+
+&lt;p&gt;Aangesloten organisaties en personen (hub accounts) kunnen dossiers (resources) aanmelden op de Hub, en bij deze aanmelding vastleggen welke andere accounts toegang krijgen tot het betreffende dossier (shares).&lt;/p&gt;
+
+&lt;p&gt;Een aanmelding bevat de volgende informatie:&lt;/p&gt;
+
+&lt;p&gt;Client gerelateerde elementen:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;client_bsn: Burger Service Nummer&lt;/li&gt;
+&lt;li&gt;client_displayname: Volledige naam van de client&lt;/li&gt;
+&lt;li&gt;client_birthdate: Geboortedatum (in formaat YYYYMMdd)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Zwangerschap gerelateerde elementen:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;reference: Interne referentie van aanmeldende provider (zwangerschapsnummer in bronsysteem)&lt;/li&gt;
+&lt;li&gt;gravida: Graviditeit&lt;/li&gt;
+&lt;li&gt;para: Pariteit&lt;/li&gt;
+&lt;li&gt;edd: Aterme datum&lt;/li&gt;
+&lt;li&gt;start_at: Start datum zorg bij provider&lt;/li&gt;
+&lt;li&gt;end_at: Eind datum zorg bij provider&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;dossiers-zoeken&#34;&gt;Dossiers zoeken&lt;/h3&gt;
+
+&lt;p&gt;De Hub bevat alleen de basis gegevens van een dossier zodat andere accounts het dossier kunnen vinden. De Hub bevat niet het dossier zelf, slechts een verwijzing hiernaar bij het bron-systeem.&lt;/p&gt;
+
+&lt;p&gt;De beschikbare dossiers kunnen opgevraagd worden obv verschillende eigenschappen van een dossier. In veel gevallen is dit het BSN van de client. Als reactie op de zoekopdracht volgt een lijst met dossiers die andere organisaties hebben aangemeld, en gedeeld hebben met het opvragende account.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Welkom</title>
+      <link>http://doc.perinatologie.nl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/</guid>
+      <description>&lt;p&gt;Welkom op de PeriHub technische documentatie website.&lt;/p&gt;
+
+&lt;p&gt;Gebruik de linker navigatie balk om de verschillende documenten in te zien.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Github projecten</title>
+      <link>http://doc.perinatologie.nl/format/github/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/format/github/</guid>
+      <description>
+
+&lt;p&gt;De dataset definities worden als open-source projecten beheerd via &lt;a href=&#34;https://github.com&#34;&gt;github.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Doelen:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Alle deelnemers hebben altijd toegang tot de laatste versie van de definities.&lt;/li&gt;
+&lt;li&gt;Iedereen is in staat aanvullingen en/of correcties in te sturen via een &lt;a href=&#34;https://help.github.com/articles/about-pull-requests/&#34;&gt;Github Pull Request&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Versie beheer&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Hiervoor zijn 2 repositories beschikbaar:&lt;/p&gt;
+
+&lt;h2 id=&#34;perinatologie-realm-peri22&#34;&gt;perinatologie/realm-peri22&lt;/h2&gt;
+
+&lt;p&gt;Deze repository bevat de dataset definities zoals gepubliceerd door Nictiz via &lt;a href=&#34;http://decor.nictiz.nl/perinatologie/&#34;&gt;http://decor.nictiz.nl/perinatologie/&lt;/a&gt;, getransformeerd
+naar &lt;a href=&#34;realm&#34;&gt;realm&lt;/a&gt; formaat.&lt;/p&gt;
+
+&lt;p&gt;De repository bevat update-scripts welke gebruikt kunnen worden om nieuwe publicaties
+te downloaden en opnieuw genereren.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Link: &lt;a href=&#34;https://github.com/perinatologie/realm-peri22&#34;&gt;https://github.com/perinatologie/realm-peri22&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Viewer: &lt;a href=&#34;https://dataset.perinatologie.nl/peri22&#34;&gt;https://dataset.perinatologie.nl/peri22&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;perinatologie-realm-peri22x&#34;&gt;perinatologie/realm-peri22x&lt;/h2&gt;
+
+&lt;p&gt;Deze repository bevat alle uitbreidingen op peri22 die nodig zijn binnen de PeriHub infrastructuur.&lt;/p&gt;
+
+&lt;p&gt;Zie de bijbehorende README.md voor inhoudelijke details.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Link: &lt;a href=&#34;https://github.com/perinatologie/realm-peri22x&#34;&gt;https://github.com/perinatologie/realm-peri22x&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Viewer: &lt;a href=&#34;https://dataset.perinatologie.nl/peri22x&#34;&gt;https://dataset.perinatologie.nl/peri22x&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Accounts</title>
+      <link>http://doc.perinatologie.nl/architecture/accounts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/architecture/accounts/</guid>
+      <description>
+
+&lt;h2 id=&#34;accounts&#34;&gt;Accounts&lt;/h2&gt;
+
+&lt;p&gt;Alle interactie met de PeriHub verloopt via “Accounts”. Een account kan worden aangevraagd via de website:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.perinatologie.nl&#34;&gt;https://www.perinatologie.nl&lt;/a&gt; (rechtsbovenin “aanmelden”)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;account-typen-user-organization-api-key&#34;&gt;Account Typen: User, Organization, API Key&lt;/h2&gt;
+
+&lt;p&gt;Er zijn 3 typen Hub Accounts:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;User&lt;/strong&gt;: Een User Account is een persoonlijk account voor bijvoorbeeld een zorgverlener, client of medewerker. Met een User Account kan bijvboorbeeld worden ingelogged op bepaalde diensten van Perinatologie.nl&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Organization&lt;/strong&gt;: Een Organization Account betreft een Praktijk, Ziekenhuis, Kraamzorg bureau, of andere typen organisaties. Een organisatie kan niet direct inloggen, maar is altijd gekoppeld aan een of meerdere User Accounts. Een organisatie kan dus meerdere user accounts bevatten, en 1 user kan deel uitmaken van meerdere organisaties. Elk van deze “Users” heeft toegang tot resources (zoals bv dossiers) die gedeeld zijn met de organisatie.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;API Key&lt;/strong&gt;: Een API Key Account is nodig voor een applicatie om gebruik te maken van de Hub APIs. Een API Key is, net als een User Account, gekoppeld aan een Organisatie Account. Middels het API Key Account kan een applicatie inzage krijgen in de Resources die gedeeld zijn met de betreffende Organisatie.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Resources</title>
+      <link>http://doc.perinatologie.nl/architecture/resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/architecture/resources/</guid>
+      <description>
+
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+
+&lt;p&gt;Op de Hub kunnen accounts (Organizations en Users) “Resources” aanmelden op de Hub. Vervolgens kunnen deze resources worden gedeeld met andere Hub Accounts.&lt;/p&gt;
+
+&lt;h2 id=&#34;resource-types&#34;&gt;Resource types&lt;/h2&gt;
+
+&lt;p&gt;Elke Resource heeft een Resource Type. Het Type geeft aan wat voor soort Resource het betreft. Aanmelders zijn vrij te bepalen welke typen ze aanmelden, maar samenwerkende partijen kunnen afspraken maken over welke typen ze ondersteunen.
+Resource typen: perinatologie/dossier en hub/dossier
+Het eerste Resource Type waarvoor deze afspraken zijn gemaakt via het Perinatologie.nl platform is het type “perinatologie/dossier”, wat een zwangerschaps dossier beschrijft. De opvolger hiervan is het type “hub/dossier”. Deze is met betrekking tot resource eigenschappen identiek.&lt;/p&gt;
+
+&lt;p&gt;Deze resources bevatten de volgende eigenschappen:&lt;/p&gt;
+
+&lt;p&gt;Zwangerschap gerelateerde elementen:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;reference&lt;/strong&gt;: Unieke referentie voor een zwangerschap van 1 client&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;gravida&lt;/strong&gt;: De graviditeit van de zwangerschap&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;para&lt;/strong&gt;: De pariteit van de zwangerschap&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;start_at&lt;/strong&gt;: intake datum bij de provider&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;end_at&lt;/strong&gt;: eind datum indien van toepassing&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;edd&lt;/strong&gt;: Aterme datum&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Client gerelateerde elementen:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;client_displayname&lt;/strong&gt;: Volledige client naam&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;client_bsn&lt;/strong&gt;: Burger Service Nummer van de client.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;client_birthdate&lt;/strong&gt;: Geboortedatum van de client&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Automatische elementen:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;registered_at&lt;/strong&gt;: Aanmeld datum op de hub&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;provider_accountname&lt;/strong&gt;: account naam van de provider&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;resource-shares&#34;&gt;Resource shares&lt;/h2&gt;
+
+&lt;p&gt;Een aangemelde Resource kan via de Hub gedeeld worden met andere Hub Accounts.&lt;/p&gt;
+
+&lt;p&gt;Enkele voorbeelden:&lt;/p&gt;
+
+&lt;p&gt;Een verloskundige praktijk (organization account) kan een dossier (resource type peri/dossier) delen met een ziekenhuis (organization account).
+Een ziekenhuis (organization account) kan een dossier (resource type peri/dossier) delen met verschillende verloskundige praktijken (organization accounts) in de regio.
+Een verloskundige praktijk (organization account) kan een dossier delen met een client (user account).
+Een client (user account) kan haar eigen dossier delen met een huisartsenpraktijk (organization account).
+Een verloskundige praktijk (organization account) kan een dossier delen met een kraamzorg buro (organization account).
+… etc&lt;/p&gt;
+
+&lt;p&gt;Een Resource kan gedeeld worden met een of meerdere andere accounts. Hetzelfde dossier kan dus zowel gedeeld worden met bijvoorbeeld een ziekenhuis, een kraamzorg buro als een client.&lt;/p&gt;
+
+&lt;p&gt;Een resource heeft altijd 1 Provider. De Provider is het account welke de resource heeft aangemeld op de hub, en is daarmee eigenaar van het dossier. Andere accounts waarmee de resource is gedeeld kunnen de data van deze resource opvragen bij de Provider mbv een “token” welke wordt uitgegeven door de Hub.&lt;/p&gt;
+
+&lt;p&gt;Een Provider kan Resources delen door tijdens de aanmelding een lijst van Identifiers en Identifier Types mee te geven zodat de Hub kan achterhalen om welke accounts het gaat. Geldige Identifier Types zijn bijvoorbeeld accountNames, AGB codes of accountUuids.&lt;/p&gt;
+
+&lt;h2 id=&#34;resource-providers&#34;&gt;Resource providers:&lt;/h2&gt;
+
+&lt;p&gt;Organisaties die resources op de PeriHub aanmelden zijn de Provider van deze resource. Tijdens aanmelding geven Providers slechts een beperkte hoeveelheid ‘meta-data’ door aan de Hub (zie Resource Types). De PeriHub bevat niet de daadwerkelijke bron-data van een bepaalde resource, alleen de data die van toepassing is op het Resource Type.&lt;/p&gt;
+
+&lt;p&gt;Om de bron-data te verkrijgen bevraagt de aanvrager eerst de Hub. De Hub geeft de meta-data van de zoekresultaten terug zoals deze bekend zijn in de hub. Daarnaast bevat het zoekresultaat informatie die de bevrager kan gebruiken om direct bij de Provider van het Resource de bron-data op te vragen.&lt;/p&gt;
+
+&lt;p&gt;De Hub bevat op deze manier nooit de volledige informatie, en de bevrager krijgt altijd de meest actuele data terug precies zoals deze op dat moment is vastgelegd bij de Provider.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Authenticatie</title>
+      <link>http://doc.perinatologie.nl/implementation/authentication/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/implementation/authentication/</guid>
+      <description>&lt;p&gt;Om aan te sluiten op de Hub heeft een organisatie een eigen Hub Account nodig. Deze zijn te verkrijgen via www.perinatologie.nl&lt;/p&gt;
+
+&lt;p&gt;Voor elk Hub Account kunnen 1 of meerdere API Keys worden uitgegeven. Een API Key geeft toegang tot de dossiers die gedeeld zijn met het bijbehorende account.&lt;/p&gt;
+
+&lt;p&gt;Een API key bevat zowel een key als een secret. De key kan zichtbaar zijn voor derden. Het secret dient geheim te blijven bij de eigenaar van het account.&lt;/p&gt;
+
+&lt;p&gt;Mbv de api key en secret kan een applicatie requests plaatsen op de Hub mbv HTTP Basic Auth via een SSL verbinding.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Elementen</title>
+      <link>http://doc.perinatologie.nl/format/elements/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/format/elements/</guid>
+      <description>
+
+&lt;h2 id=&#34;het-resource-element&#34;&gt;Het &lt;code&gt;resource&lt;/code&gt; element&lt;/h2&gt;
+
+&lt;p&gt;Binnen dit element bestaan de volgende attributen:
+* type (verplicht): het type resource. Meest voorkomende waarde &lt;code&gt;hub/dossier&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Dit element is het root element van een hub resource document.&lt;/p&gt;
+
+&lt;h2 id=&#34;het-section-element&#34;&gt;Het &lt;code&gt;section&lt;/code&gt; element&lt;/h2&gt;
+
+&lt;p&gt;Binnen het root &lt;code&gt;resource&lt;/code&gt; element bestaan een of meerdere &lt;code&gt;section&lt;/code&gt; elementen.
+Dit wordt gebruikt om een document onder te verdelen in logische onderdelen.&lt;/p&gt;
+
+&lt;p&gt;Enkele voorbeeld section types:
+* client: client informatie zoals naam, adres, woonplaats
+* intake: uitgebreide intake gegevens
+* zwangerschap.consult: een zwangerschaps consult, kan 0, 1 of meerdere keren voorkomen.
+* baring.consult: baring consult gegevens, kan 0, 1 of meerdere keren voorkomen.&lt;/p&gt;
+
+&lt;p&gt;Waar nodig kunnen deze typen na overeenkomst deelnemers worden aangevuld.&lt;/p&gt;
+
+&lt;p&gt;Dit element bevat de volgende attributen&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Id (verplicht): unieke id voor deze section binnen 1 resource.&lt;/li&gt;
+&lt;li&gt;type (optioneel): het type section. Voor weergave is dit attribuut niet vereist. Wanneer gegevens overgenomen of “inline” in een dossier getoond dienen te worden, dan is dit attribuut wel nodig.&lt;/li&gt;
+&lt;li&gt;label (verplicht): Tbv weergave doeleinden.&lt;/li&gt;
+&lt;li&gt;uuid (optioneel): Wanneer het record binnen het systeem van de verzender een eenduidige unieke identificatie heeft kan dit attribuut worden ingevuld. Alleen nodig igv van overname gegevens, om duplicatie tegen te gaan.&lt;/li&gt;
+&lt;li&gt;createStamp (verplicht): wanneer het record is aangemaakt in betreffend record/section in bron systeem. Tbv weergave doeleinden. Bevat een unix timestamp.&lt;/li&gt;
+&lt;li&gt;updateStamp (optioneel): laatste wijziging van betreffende record/section in bron systeem. Bevat een unix timestamp.&lt;/li&gt;
+&lt;li&gt;effectStamp (optioneel): moment waarop deze section betrekking heeft. Bij een consult is dit bijvoorbeeld de consult-datum. Bevat een unix timestamp.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;het-value-element&#34;&gt;Het &lt;code&gt;value&lt;/code&gt; element&lt;/h2&gt;
+
+&lt;p&gt;Binnen de &lt;code&gt;section&lt;/code&gt; elementen bestaan een of meerdere &lt;code&gt;value&lt;/code&gt; elementen.
+De value elementen bevatten de daadwerkelijke gegevens.&lt;/p&gt;
+
+&lt;p&gt;Dit element bevat de volgende attributen
+* label (verplicht): Label voor weergave doeleinden.
+* value (verplicht): De waarde zoals geregistreerd in het bronsysteem. Wanneer het om een codelijst gaat staat hier de code (niet de tekst representatie).
+* displayValue (optioneel): Waarde tbv weergave eindgebruiker. Wanneer de value een code betreft staat hier de voluit geschreven waarde. Wanneer dit attribuut leeg is zal de originele &lt;code&gt;value&lt;/code&gt; worden getoond. In geval van tekst values kan dit veld daarom ook worden leeg gelaten.
+* concept (optioneel): verwijzing naar gestandaardiseerd data element. Vul hier bv &lt;code&gt;peri22-dataelement-10030&lt;/code&gt; in wanneer er een BSN gecommuniceerd wordt. Alleen nodig indien het doel is om gegevens over te nemen/verwerken. Voor dossier weergave is dit veld niet vereist.
+* keyid (optioneel): verwijzing naar key id’s in spreadsheet “Dataset overzicht aansluting Hub”. Wij proberen de keyid’s uit te faseren en in plaats hiervan alleen gebruik te maken van het concept attribuut.&lt;/p&gt;
+
+&lt;h2 id=&#34;concept-keyid-of-allebij&#34;&gt;concept, keyid, of allebij?&lt;/h2&gt;
+
+&lt;p&gt;Het doel van de &lt;code&gt;concept&lt;/code&gt; en &lt;code&gt;keyid&lt;/code&gt; attributen zijn vergelijkbaar. Deelnemers volgen zoveel mogelijk gestandaardiseerde data elementen door gebruik te maken van het &lt;code&gt;concept&lt;/code&gt; attribuut en hier &lt;code&gt;peri-dataelement-*&lt;/code&gt; id’s in te geven.&lt;/p&gt;
+
+&lt;p&gt;Tbv flexibele uitwisseling zijn er binnen het samenwerkingsverband in een vroeger tijdstip ook &lt;code&gt;keyid&lt;/code&gt;s afgesproken. Wanneer het voor beide leveranciers eenvoudiger is om een &lt;code&gt;keyid&lt;/code&gt; te communiceren ipv (of naast) een &lt;code&gt;concept&lt;/code&gt;, dan blijft deze optie bestaan.&lt;/p&gt;
+
+&lt;p&gt;Maar het advies is om vooral gebruik te maken van het &lt;code&gt;concept&lt;/code&gt; attribuut. Zowel &lt;code&gt;keyid&lt;/code&gt; als &lt;code&gt;concept&lt;/code&gt; kunnen worden ingegeven wanneer deze bekend zijn, en aansluiten.&lt;/p&gt;
+
+&lt;p&gt;Er wordt gewerkt aan een mapping tabel tussen keyids en elementen uit de peri22- dataset waar een een-op-een mapping mogelijk is.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;repeat-ids&#34;&gt;Repeat IDs&lt;/h2&gt;
+
+&lt;p&gt;Er zijn situaties te bedenken waarin een value binnen 1 section meerdere malen voorkomt. Denk bijvoorbeeld aan een section &lt;code&gt;zwangerschap.consult&lt;/code&gt; bij een meerling. Dan kan de value voor ligging 2 keer voorkomen (1 per foetus). Voeg in dat geval een attribuut &lt;code&gt;repeatid&lt;/code&gt; toe aan elk betreffend value element, beginnend bij 0, oplopend per value element van zelfde type (obv keyid of element attribuut).&lt;/p&gt;
+
+&lt;p&gt;Bijvoorbeeld zwangerschaps consult voor een meerling:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;section type=”zwangerschap.consult”&amp;gt;
+  &amp;lt;value
+    label=”AM duur”
+    value=”20+3”
+    concept=”peri22-dataelement-82316”
+    keyid=”amduur” /&amp;gt;
+  &amp;lt;value
+    label=”IUVD”
+    value=”nee”
+    concept=”peri22-dataelement-20410”
+    repeat=”0” /&amp;gt;
+  &amp;lt;value
+    label=”IUVD”
+    value=”nee”
+    concept=”peri22-dataelement-20410”
+    repeat=”1” /&amp;gt;
+&amp;lt;/section&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Structuur</title>
+      <link>http://doc.perinatologie.nl/format/structure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/format/structure/</guid>
+      <description>&lt;p&gt;Dit formaat bevat 1 client element, met daarbinnen een reeks ‘value’ elementen, welke informatie over de client bevatten.&lt;/p&gt;
+
+&lt;p&gt;Elke value element bevat een &lt;code&gt;label&lt;/code&gt; attribuut (tbv eenvoudige weergave), een daadwerkelijke &lt;code&gt;value&lt;/code&gt; attribuut, en in veel gevallen een “keyid”.&lt;/p&gt;
+
+&lt;p&gt;Om de informatie te tonen volstaat het dus om door de value elementen te lopen, en ovv label en value de informatie aan de gebruiker te tonen.&lt;/p&gt;
+
+&lt;p&gt;Voor verdere integratie is er de mogelijkheid om de labels te negeren, en te kijken naar de keyids. Obv de keyid kan er een mapping worden gemaakt daar velden in het ontvangende systeem, om hiermee de locale informatie bij te werken.&lt;/p&gt;
+
+&lt;p&gt;Binnen elk client element zit 1 &lt;code&gt;eocs&lt;/code&gt; element, met hier binnen een of meerdere &lt;code&gt;eoc&lt;/code&gt; (episode of care) elementen.&lt;/p&gt;
+
+&lt;p&gt;Binnen deze eoc elementen zitten binnen het forms element weer een of meerdere form elementen. Deze form elementen worden gebruikt om de data per onderwerp te groeperen.&lt;/p&gt;
+
+&lt;p&gt;Ook hier kan ter weergave het label attribuut worden gebruikt, en optioneel voor verdere integratie obv keyid een mapping worden gedaan.&lt;/p&gt;
+
+&lt;p&gt;In de volgende hoofdstukken worden de volgende concepten toegelicht:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;resource: Elk bestand bevat 1 resource (document, dossier, zwangerschap).&lt;/li&gt;
+&lt;li&gt;section: Een resource bevat 1 of meerdere sections&lt;/li&gt;
+&lt;li&gt;value: Elke section bevat 1 of meerdere values&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Transport</title>
+      <link>http://doc.perinatologie.nl/implementation/transport/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/implementation/transport/</guid>
+      <description>&lt;p&gt;De API v3 wordt aangeboden als eenvoudige https + xml API.
+Er zijn 2 urls van belang:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;/v3/resources?k=v&lt;/code&gt;: deze url geeft een overzicht van alle dossiers die zijn aangemeld en die met het opvragende account zijn gedeeld. Elk dossier bevat een url naar de volledige dossier informatie. De resources zijn te filteren mbv 1 of meerdere key/value query parameters. Enkele voorbeelden:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;/v3/resources?client_bsn=9999999&amp;amp;gravida=2&lt;/li&gt;
+&lt;li&gt;/v3/resources?provider_account=naam&lt;/li&gt;
+&lt;li&gt;/v3/resources?client_birthdate=19880101&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;/v3/register&lt;/code&gt;: deze url wordt gebruikt om mbv POST data een aanmelding op de Hub te aan te melden of bij te werken. Deze aanmelding bevat de basis client en zwangerschaps gegevens (zie hierboven), en een lijst van 1 of meerdere team-leden welke toegang krijgen tot dit dossier.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Al het verkeer van en naar de Hub verloopt via SSL/HTTPS requests.&lt;/p&gt;
+
+&lt;p&gt;Het /v3/resources endpoint wordt opgevraagd mbv de GET methode.&lt;/p&gt;
+
+&lt;p&gt;Het /v3/register endpoint wordt op opgevraagd mbv de POST methode, en bevat de benodigde informatie over het dossier en delingen als XML bericht (zie verderop)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Resources registreren</title>
+      <link>http://doc.perinatologie.nl/architecture/register/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/architecture/register/</guid>
+      <description>&lt;p&gt;Een Provider kan een nieuw resource aanmelden op de Hub ovv het Resource Type en aanvullende meta-data (Resource Properties) zoals bijvoorbeeld &lt;code&gt;client_bsn&lt;/code&gt;, &lt;code&gt;gravida&lt;/code&gt;, etc.&lt;/p&gt;
+
+&lt;p&gt;Tegelijkertijd bevat de aanmelding een lijst van &lt;a href=&#34;http://doc.perinatologie.nl/architectuur/resources/#resource-shares&#34;&gt;Resource Shares&lt;/a&gt;: Een lijst van identifiers van accounts waarmee het Resource gedeeld moet worden. Als Identifiers kunnen verschillende Identifier Types worden meegestuurd waarmee de Hub de accounts kan vinden. Veelal is dit een accountName, accountUuid of AGB code.&lt;/p&gt;
+
+&lt;p&gt;Elk Hub Account kan meerdere Identifiers bevatten waardoor deze gevonden kunnen worden.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Resources zoeken</title>
+      <link>http://doc.perinatologie.nl/architecture/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/architecture/search/</guid>
+      <description>&lt;p&gt;Als eerste stuurt de bevrager een verzoek aan de Hub om resources te vinden welke gedeeld zijn met de bevrager. De bevrager kan zoeken op alle resource eigenschappen. In het geval van een hub/dossier zal dit veelal zijn obv &lt;code&gt;client_bsn&lt;/code&gt; en &lt;code&gt;reference&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;De zoekresultaten bevatten alle dossiers die gedeeld zijn met de accounts van de bevrager.
+Elk resultaat bevat ook een provider URL en een Token.&lt;/p&gt;
+
+&lt;p&gt;Via deze URL en het Token kan de bevrager direct bij de Provider van het Resource de meest actuele bron-data ophalen.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[GET] /v3/resources/{resourceKey}</title>
+      <link>http://doc.perinatologie.nl/implementation/endpoint_2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/implementation/endpoint_2/</guid>
+      <description>&lt;p&gt;Wanneer een resourceKey obv eerdere requests bekend is kan ook direct (zonder zoekopdracht) de laatste details van de resource opgevraagd worden.&lt;/p&gt;
+
+&lt;p&gt;Een voorbeeld response:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;resource type=&amp;quot;perinatologie/dossier&amp;quot;&amp;gt;
+  &amp;lt;property name=&amp;quot;key&amp;quot;&amp;gt;jD83H4kXz&amp;lt;/property&amp;gt;
+  &amp;lt;property name=&amp;quot;client_displayname&amp;quot;&amp;gt;van der Jansen&amp;lt;/property&amp;gt;
+  &amp;lt;property name=&amp;quot;client_bsn&amp;quot;&amp;gt;162339584&amp;lt;/property&amp;gt;
+  &amp;lt;property name=&amp;quot;client_birthdate&amp;quot;&amp;gt;19861209&amp;lt;/property&amp;gt;
+  &amp;lt;property name=&amp;quot;reference&amp;quot;&amp;gt;G2 2016&amp;lt;/property&amp;gt;
+  &amp;lt;property name=&amp;quot;gravida&amp;quot;&amp;gt;2&amp;lt;/property&amp;gt;
+  &amp;lt;property name=&amp;quot;para&amp;quot;&amp;gt;0&amp;lt;/property&amp;gt;
+  &amp;lt;property name=&amp;quot;start_at&amp;quot;&amp;gt;20160103&amp;lt;/property&amp;gt;
+  &amp;lt;property name=&amp;quot;end_at&amp;quot;&amp;gt;20160409&amp;lt;/property&amp;gt;
+  &amp;lt;property name=&amp;quot;edd&amp;quot;&amp;gt;20160610&amp;lt;/property&amp;gt;
+  &amp;lt;property name=&amp;quot;hub_registered_at&amp;quot;&amp;gt;20160203&amp;lt;/property&amp;gt;
+  &amp;lt;property name=&amp;quot;hub_provider_account&amp;quot;&amp;gt;xyz&amp;lt;/property&amp;gt;
+&amp;lt;/resource&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[GET] /v3/resources/{resourceKey}/add-share/{accountName}/{permission}</title>
+      <link>http://doc.perinatologie.nl/implementation/endpoint_share_add/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/implementation/endpoint_share_add/</guid>
+      <description>&lt;p&gt;Nadat een resource is aangemeld kan deze worden gedeeld met andere Hub accounts.&lt;/p&gt;
+
+&lt;p&gt;De URL bevat een accountName waarmee het betreffende resource gedeeld mag worden. De &lt;code&gt;permission&lt;/code&gt; parameter bevat de gegevens die aangeven wat er precies gedeeld mag worden igv selectief delen. Standaard kan hier de permission &lt;code&gt;full&lt;/code&gt; worden gebruikt.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Implementations on My blog</title>
+    <link>http://doc.perinatologie.nl/implementation/index.xml</link>
+    <description>Recent content in Implementations on My blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>nl-nl</language>
+    <atom:link href="http://doc.perinatologie.nl/implementation/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Implementatie handleiding</title>
+      <link>http://doc.perinatologie.nl/implementation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/implementation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Inleiding</title>
+      <link>http://doc.perinatologie.nl/implementation/introduction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/implementation/introduction/</guid>
+      <description>
+
+&lt;h2 id=&#34;inleiding&#34;&gt;Inleiding&lt;/h2&gt;
+
+&lt;p&gt;De Hub is een initiatief ter bevordering van het delen van gegevens in de geboortezorg. Om dit doel te bereiken staat de Hub open voor alle zorgaanbieders en software leveranciers.&lt;/p&gt;
+
+&lt;p&gt;Zorgaanbieders kunnen eenvoudig toegang tot de actuele versies van het dossier ontsluiten, direct vanuit hun software applicatie. Er wordt dus niet gewerkt met ‘berichten’, welke slechts een snapshot zijn van een bepaald moment. Middels de Hub kunnen vragende zorgaanbieders altijd de meest actuele gegevens raadplegen.&lt;/p&gt;
+
+&lt;h2 id=&#34;hoe-werkt-het&#34;&gt;Hoe werkt het?&lt;/h2&gt;
+
+&lt;p&gt;Het concept is erg eenvoudig: Er kunnen dossiers worden aangemeld en dossiers kunnen worden gezocht. Na het vinden van een betreffend dossier kunnen de actuele gegevens worden opgevraagd bij de bron.&lt;/p&gt;
+
+&lt;h3 id=&#34;dossiers-aanmelden&#34;&gt;Dossiers aanmelden&lt;/h3&gt;
+
+&lt;p&gt;Aangesloten organisaties en personen (hub accounts) kunnen dossiers (resources) aanmelden op de Hub, en bij deze aanmelding vastleggen welke andere accounts toegang krijgen tot het betreffende dossier (shares).&lt;/p&gt;
+
+&lt;p&gt;Een aanmelding bevat de volgende informatie:&lt;/p&gt;
+
+&lt;p&gt;Client gerelateerde elementen:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;client_bsn: Burger Service Nummer&lt;/li&gt;
+&lt;li&gt;client_displayname: Volledige naam van de client&lt;/li&gt;
+&lt;li&gt;client_birthdate: Geboortedatum (in formaat YYYYMMdd)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Zwangerschap gerelateerde elementen:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;reference: Interne referentie van aanmeldende provider (zwangerschapsnummer in bronsysteem)&lt;/li&gt;
+&lt;li&gt;gravida: Graviditeit&lt;/li&gt;
+&lt;li&gt;para: Pariteit&lt;/li&gt;
+&lt;li&gt;edd: Aterme datum&lt;/li&gt;
+&lt;li&gt;start_at: Start datum zorg bij provider&lt;/li&gt;
+&lt;li&gt;end_at: Eind datum zorg bij provider&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;dossiers-zoeken&#34;&gt;Dossiers zoeken&lt;/h3&gt;
+
+&lt;p&gt;De Hub bevat alleen de basis gegevens van een dossier zodat andere accounts het dossier kunnen vinden. De Hub bevat niet het dossier zelf, slechts een verwijzing hiernaar bij het bron-systeem.&lt;/p&gt;
+
+&lt;p&gt;De beschikbare dossiers kunnen opgevraagd worden obv verschillende eigenschappen van een dossier. In veel gevallen is dit het BSN van de client. Als reactie op de zoekopdracht volgt een lijst met dossiers die andere organisaties hebben aangemeld, en gedeeld hebben met het opvragende account.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Authenticatie</title>
+      <link>http://doc.perinatologie.nl/implementation/authentication/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/implementation/authentication/</guid>
+      <description>&lt;p&gt;Om aan te sluiten op de Hub heeft een organisatie een eigen Hub Account nodig. Deze zijn te verkrijgen via www.perinatologie.nl&lt;/p&gt;
+
+&lt;p&gt;Voor elk Hub Account kunnen 1 of meerdere API Keys worden uitgegeven. Een API Key geeft toegang tot de dossiers die gedeeld zijn met het bijbehorende account.&lt;/p&gt;
+
+&lt;p&gt;Een API key bevat zowel een key als een secret. De key kan zichtbaar zijn voor derden. Het secret dient geheim te blijven bij de eigenaar van het account.&lt;/p&gt;
+
+&lt;p&gt;Mbv de api key en secret kan een applicatie requests plaatsen op de Hub mbv HTTP Basic Auth via een SSL verbinding.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Transport</title>
+      <link>http://doc.perinatologie.nl/implementation/transport/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/implementation/transport/</guid>
+      <description>&lt;p&gt;De API v3 wordt aangeboden als eenvoudige https + xml API.
+Er zijn 2 urls van belang:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;/v3/resources?k=v&lt;/code&gt;: deze url geeft een overzicht van alle dossiers die zijn aangemeld en die met het opvragende account zijn gedeeld. Elk dossier bevat een url naar de volledige dossier informatie. De resources zijn te filteren mbv 1 of meerdere key/value query parameters. Enkele voorbeelden:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;/v3/resources?client_bsn=9999999&amp;amp;gravida=2&lt;/li&gt;
+&lt;li&gt;/v3/resources?provider_account=naam&lt;/li&gt;
+&lt;li&gt;/v3/resources?client_birthdate=19880101&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;/v3/register&lt;/code&gt;: deze url wordt gebruikt om mbv POST data een aanmelding op de Hub te aan te melden of bij te werken. Deze aanmelding bevat de basis client en zwangerschaps gegevens (zie hierboven), en een lijst van 1 of meerdere team-leden welke toegang krijgen tot dit dossier.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Al het verkeer van en naar de Hub verloopt via SSL/HTTPS requests.&lt;/p&gt;
+
+&lt;p&gt;Het /v3/resources endpoint wordt opgevraagd mbv de GET methode.&lt;/p&gt;
+
+&lt;p&gt;Het /v3/register endpoint wordt op opgevraagd mbv de POST methode, en bevat de benodigde informatie over het dossier en delingen als XML bericht (zie verderop)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[GET] /v3/resources/{resourceKey}</title>
+      <link>http://doc.perinatologie.nl/implementation/endpoint_2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/implementation/endpoint_2/</guid>
+      <description>&lt;p&gt;Wanneer een resourceKey obv eerdere requests bekend is kan ook direct (zonder zoekopdracht) de laatste details van de resource opgevraagd worden.&lt;/p&gt;
+
+&lt;p&gt;Een voorbeeld response:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;resource type=&amp;quot;perinatologie/dossier&amp;quot;&amp;gt;
+  &amp;lt;property name=&amp;quot;key&amp;quot;&amp;gt;jD83H4kXz&amp;lt;/property&amp;gt;
+  &amp;lt;property name=&amp;quot;client_displayname&amp;quot;&amp;gt;van der Jansen&amp;lt;/property&amp;gt;
+  &amp;lt;property name=&amp;quot;client_bsn&amp;quot;&amp;gt;162339584&amp;lt;/property&amp;gt;
+  &amp;lt;property name=&amp;quot;client_birthdate&amp;quot;&amp;gt;19861209&amp;lt;/property&amp;gt;
+  &amp;lt;property name=&amp;quot;reference&amp;quot;&amp;gt;G2 2016&amp;lt;/property&amp;gt;
+  &amp;lt;property name=&amp;quot;gravida&amp;quot;&amp;gt;2&amp;lt;/property&amp;gt;
+  &amp;lt;property name=&amp;quot;para&amp;quot;&amp;gt;0&amp;lt;/property&amp;gt;
+  &amp;lt;property name=&amp;quot;start_at&amp;quot;&amp;gt;20160103&amp;lt;/property&amp;gt;
+  &amp;lt;property name=&amp;quot;end_at&amp;quot;&amp;gt;20160409&amp;lt;/property&amp;gt;
+  &amp;lt;property name=&amp;quot;edd&amp;quot;&amp;gt;20160610&amp;lt;/property&amp;gt;
+  &amp;lt;property name=&amp;quot;hub_registered_at&amp;quot;&amp;gt;20160203&amp;lt;/property&amp;gt;
+  &amp;lt;property name=&amp;quot;hub_provider_account&amp;quot;&amp;gt;xyz&amp;lt;/property&amp;gt;
+&amp;lt;/resource&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[GET] /v3/resources/{resourceKey}/add-share/{accountName}/{permission}</title>
+      <link>http://doc.perinatologie.nl/implementation/endpoint_share_add/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/implementation/endpoint_share_add/</guid>
+      <description>&lt;p&gt;Nadat een resource is aangemeld kan deze worden gedeeld met andere Hub accounts.&lt;/p&gt;
+
+&lt;p&gt;De URL bevat een accountName waarmee het betreffende resource gedeeld mag worden. De &lt;code&gt;permission&lt;/code&gt; parameter bevat de gegevens die aangeven wat er precies gedeeld mag worden igv selectief delen. Standaard kan hier de permission &lt;code&gt;full&lt;/code&gt; worden gebruikt.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[GET] /v3/resources/{resourceKey}/remove-share/{accountName}</title>
+      <link>http://doc.perinatologie.nl/implementation/endpoint_share_remove/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/implementation/endpoint_share_remove/</guid>
+      <description>&lt;p&gt;Nadat een resource is aangemeld kan deze worden gedeeld met andere Hub accounts.&lt;/p&gt;
+
+&lt;p&gt;De URL bevat een accountName waarmee het betreffende resource gedeeld mag worden. De &lt;code&gt;permission&lt;/code&gt; parameter bevat de gegevens die aangeven wat er precies gedeeld mag worden igv selectief delen. Standaard kan hier de permission &lt;code&gt;full&lt;/code&gt; worden gebruikt.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[GET] /v3/resources/{resourceKey}/shares</title>
+      <link>http://doc.perinatologie.nl/implementation/endpoint_4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/implementation/endpoint_4/</guid>
+      <description>&lt;p&gt;Dit end-point geeft een actueel overzicht van alle accounts waarmee de betreffende resource is gedeeld.&lt;/p&gt;
+
+&lt;p&gt;Een voorbeeld response:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;shares&amp;gt;
+&amp;lt;share&amp;gt;
+&amp;lt;resourceKey&amp;gt;jD83H4kXz&amp;lt;/resourceKey&amp;gt;
+&amp;lt;granteeName&amp;gt;account-a&amp;lt;/granteeName&amp;gt;
+&amp;lt;granteeDisplayName&amp;gt;Account B&amp;lt;/granteeDisplayName&amp;gt;
+&amp;lt;permission&amp;gt;full&amp;lt;/permission&amp;gt;
+&amp;lt;/share&amp;gt;
+&amp;lt;share&amp;gt;
+&amp;lt;resourceKey&amp;gt;jD83H4kXz&amp;lt;/resourceKey&amp;gt;
+&amp;lt;granteeName&amp;gt;account-b&amp;lt;/granteeName&amp;gt;
+&amp;lt;granteeDisplayName&amp;gt;Account B&amp;lt;/granteeDisplayName&amp;gt;
+&amp;lt;permission&amp;gt;full&amp;lt;/permission&amp;gt;
+&amp;lt;/share&amp;gt;
+&amp;lt;/shares&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[GET] /v3/resources/{resourceKey}/source</title>
+      <link>http://doc.perinatologie.nl/implementation/endpoint_3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/implementation/endpoint_3/</guid>
+      <description>&lt;p&gt;Om de daadwerkelijke bron data op te vragen kan via de &lt;code&gt;/source&lt;/code&gt; sub-url alle benodigde informatie worden opgevraagd obv een resourceKey.&lt;/p&gt;
+
+&lt;p&gt;Een voorbeeld response:&lt;/p&gt;
+
+&lt;p&gt;&lt;source&gt;
+  &lt;api&gt;v3&lt;/api&gt;
+  &lt;url&gt;&lt;a href=&#34;https://api.example.com/dossierapi/162339584/G2%202015&#34;&gt;https://api.example.com/dossierapi/162339584/G2%202015&lt;/a&gt;&lt;/url&gt;
+  &lt;jwt&gt;
+      eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
+      eyJzdWIiOiIxMjM0NTY3ODkwIiwjbmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.
+      TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ
+  &lt;/jwt&gt;
+  &lt;provider&gt;
+    &lt;account&gt;xyz&lt;/account&gt;
+    &lt;displayname&gt;Praktijk XYZ&lt;/displayname&gt;
+  &lt;/provider&gt;
+&lt;/source&gt;&lt;/p&gt;
+
+&lt;p&gt;Het source element bevat informatie welke gebruikt kan worden om de data op te halen bij de bron.
+url: Directe URL naar het API end-point, inclusief alle parameters
+api: De API versie momenteel actief bij de betreffende provider (v1 of v3)
+jwt: JWT / JSON Web Token (zie details hieronder). Alleen igv API v3&lt;/p&gt;
+
+&lt;p&gt;Het JWT is cryptografisch ondertekend met de private key van de Hub. De provider kan voor bron-data verzoeken deze JWT te valideren mbv de public key van de Hub.&lt;/p&gt;
+
+&lt;p&gt;Het JWT bevat enkele “claims”, welke ook noodzakelijk zijn te controleren door de provider voor elk bron-data verzoek.&lt;/p&gt;
+
+&lt;p&gt;iss: &lt;a href=&#34;https://hub.perinatologie.nl&#34;&gt;https://hub.perinatologie.nl&lt;/a&gt;
+aud: accountnaam van de Provider die bevraagd wordt
+sub: bsn van de client
+iat: huidige timestamp
+acc_name: account naam van de bevrager
+acc_display_name: display naam van de bevrager (ter info)
+nbf: huidige timestamp
+exp: huidige timestamp + verloop duur (configureerbaar, momenteel 1 uur).&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[GET] /v3/resources?k=v</title>
+      <link>http://doc.perinatologie.nl/implementation/endpoint_1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/implementation/endpoint_1/</guid>
+      <description>&lt;p&gt;Dit end-point wordt gebruikt om obv bijvoorbeeld een BSN na te gaan welke dossiers er met de opvragende organisatie gedeeld zijn.&lt;/p&gt;
+
+&lt;p&gt;Mbv URL Query parameters kan er gefilterd worden op alle properties. Er kan dus ook gezocht worden op bijvoorbeeld geboortedatum of atermedatum (edd).&lt;/p&gt;
+
+&lt;p&gt;Een voorbeeld response:&lt;/p&gt;
+
+&lt;p&gt;&lt;resources&gt;
+  &lt;resource type=&#34;perinatologie/dossier&#34;&gt;
+    &lt;property name=&#34;key&#34;&gt;jD83H4kXz&lt;/property&gt;
+    &lt;property name=&#34;client_displayname&#34;&gt;van der Jansen&lt;/property&gt;
+    &lt;property name=&#34;client_bsn&#34;&gt;162339584&lt;/property&gt;
+    &lt;property name=&#34;client_birthdate&#34;&gt;19861209&lt;/property&gt;
+    &lt;property name=&#34;reference&#34;&gt;G2 2016&lt;/property&gt;
+    &lt;property name=&#34;gravida&#34;&gt;2&lt;/property&gt;
+    &lt;property name=&#34;para&#34;&gt;0&lt;/property&gt;
+    &lt;property name=&#34;start_at&#34;&gt;20160103&lt;/property&gt;
+    &lt;property name=&#34;end_at&#34;&gt;20160409&lt;/property&gt;
+    &lt;property name=&#34;edd&#34;&gt;20160610&lt;/property&gt;
+    &lt;property name=&#34;hub_registered_at&#34;&gt;20160203&lt;/property&gt;
+    &lt;property name=&#34;hub_provider_account&#34;&gt;xyz&lt;/property&gt;
+  &lt;/resource&gt;
+&lt;/resources&gt;&lt;/p&gt;
+
+&lt;p&gt;Elk resource element bevat het attribuut ‘type’. Hierin wordt het resource type weergegeven, welke de ontvangende applicatie kan gebruiken om te bepalen of dit type resource verwerkt kan worden.&lt;/p&gt;
+
+&lt;p&gt;Elk resource response bevat alle properties zoals deze zijn vastgelegd in de Hub.
+Toelichting op de properties van een resource van type perinatologie/dossier:
+client_bsn: het BSN van de client
+client_displayname: Volledige naam van de client
+client_birthdate: Geboortedatum in YYYYMMDD formaat&lt;/p&gt;
+
+&lt;p&gt;reference: Interne referentie voor aanmeldende organisatie. Bijvoorbeeld het zwangerschapsnummer of lvr nummer. Dit mag ook een interne ID zijn, echter tbv communicatie bij zorgverleners onderling is het wel te adviseren hier een bekende referentie voor te gebruiken.
+gravida: graviditeit
+para: pariteit
+start_at: Start zorg datum bij provider (YYYYDDMM)
+end_at: Einde zorg datum bij provider (YYYYDDMM) indien van toepassing&lt;/p&gt;
+
+&lt;p&gt;Let op: Andere resource typen kunnen dus andere properties bevatten.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[POST] /v3/register</title>
+      <link>http://doc.perinatologie.nl/implementation/endpoint_register/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/implementation/endpoint_register/</guid>
+      <description>&lt;p&gt;Dit end-point wordt gebruikt om een dossier aan te melden of bij te werken in de Hub.&lt;/p&gt;
+
+&lt;p&gt;De request-body bevat als post-data de nieuwe resource data. Een voorbeeld request body:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
+&amp;lt;resource type=&amp;quot;perinatologie/dossier&amp;quot;&amp;gt;
+  &amp;lt;property name=&amp;quot;client_displayname&amp;quot;&amp;gt;van der Jansen&amp;lt;/property&amp;gt;
+  &amp;lt;property name=&amp;quot;client_bsn&amp;quot;&amp;gt;162339584&amp;lt;/property&amp;gt;
+  &amp;lt;property name=&amp;quot;client_birthdate&amp;quot;&amp;gt;19861209&amp;lt;/property&amp;gt;
+  &amp;lt;property name=&amp;quot;reference&amp;quot;&amp;gt;2017001&amp;lt;/property&amp;gt;
+  &amp;lt;property name=&amp;quot;gravida&amp;quot;&amp;gt;2&amp;lt;/property&amp;gt;
+  &amp;lt;property name=&amp;quot;para&amp;quot;&amp;gt;0&amp;lt;/property&amp;gt;
+  &amp;lt;property name=&amp;quot;start_at&amp;quot;&amp;gt;20160103&amp;lt;/property&amp;gt;
+  &amp;lt;property name=&amp;quot;end_at&amp;quot;&amp;gt;20160409&amp;lt;/property&amp;gt;
+  &amp;lt;property name=&amp;quot;edd&amp;quot;&amp;gt;20160610&amp;lt;/property&amp;gt;
+&amp;lt;/resource&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;De Request Body bevat een lijst van properties van het dossier obv het resource type attribuut.
+Details van deze properties komen overeen met de omschrijving in voorgaande hoofdstukken.&lt;/p&gt;
+
+&lt;p&gt;Een voorbeeld response:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;status key=&amp;quot;Di3kDj3ale3984&amp;quot;&amp;gt;OK&amp;lt;/status&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Deze informatie geeft aan dat de resource correct is aangemeld op de hub, en wat de resource key is geworden. Deze kan in de applicatie worden opgeslagen voor toekomstige requests.&lt;/p&gt;
+
+&lt;p&gt;Wanneer dezelfde combinatie van gegevens (bsn, graviditeit) worden aangemeld via register, dan zal een eventueel bestaande resource worden geupdate ipv een nieuwe worden toegevoegd.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Resource ophalen</title>
+      <link>http://doc.perinatologie.nl/implementation/retrieving_resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://doc.perinatologie.nl/implementation/retrieving_resources/</guid>
+      <description>
+
+&lt;h2 id=&#34;opvragen-dossier-bij-doelsysteem&#34;&gt;Opvragen dossier bij doelsysteem&lt;/h2&gt;
+
+&lt;p&gt;De hub geeft voor elke resource een source element terug. Deze source bevat een URL en een JWT. Deze informatie kan vervolgens gebruikt worden om een volledige en actuele versie van het dossier op te halen bij de provider van het betreffende resource.&lt;/p&gt;
+
+&lt;p&gt;De bevrager kan een HTTPS GET request uitvoeren naar de URL die ontvangen is door de Hub. Hieraan wordt als Query parameter de JWT toegevoegd.
+Bijvoorbeeld:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://api.example.com/dossierapi/12345/G3?jwt=...&#34;&gt;https://api.example.com/dossierapi/12345/G3?jwt=...&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Zie voorgaande hoofdstukken voor de claims die in het JWT zijn ge-encodeerd.&lt;/p&gt;
+
+&lt;p&gt;Bij het implementeren van de provider api is het van groot belang dat de provider de JWT valideerd mbv de public key van de Hub, en dat daarnaast de claims ook worden gevalideerd.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;De waarde van iss moet &lt;a href=&#34;https://hub.perinatologie.nl&#34;&gt;https://hub.perinatologie.nl&lt;/a&gt; zijn.&lt;/li&gt;
+&lt;li&gt;De waarde van aud moet het accountname van de provider zijn (anders kan een geldig JWT bij een andere provider worden gebruikt om data van een bepaald BSN op te vragen).&lt;/li&gt;
+&lt;li&gt;De waarde van sub moet overeenkomen met het opgevraagde BSN in de URL (anders kan mbv een andere URL een andere resource data opgehaald worden)&lt;/li&gt;
+&lt;li&gt;nbf en exp dienen gecontroleerd te worden (anders kan op een later tijdstip dezelfde JWT gebruikt worden). Het is te adviseren de API server klokken te synchroniseren.&lt;/li&gt;
+&lt;li&gt;acc_name en acc_displayname zijn ter info voor logging bij de provider.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;bron-data-formaat&#34;&gt;Bron data formaat&lt;/h2&gt;
+
+&lt;p&gt;Het formaat van de data die teruggegeven zal worden door de provider op de genoemde URL wordt bepaald door het resource type.&lt;/p&gt;
+
+&lt;p&gt;In geval van resource type &lt;code&gt;perinatologie/dossier&lt;/code&gt; is dit het door leveranciers overeengekomen formaat “Form XML”.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

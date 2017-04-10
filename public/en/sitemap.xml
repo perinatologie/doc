@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://doc.perinatologie.nl/architecture/introduction/</loc>
+  </url>
+  
+  <url>
+    <loc>http://doc.perinatologie.nl/format/introduction/</loc>
+  </url>
+  
+  <url>
+    <loc>http://doc.perinatologie.nl/implementation/introduction/</loc>
+  </url>
+  
+  <url>
+    <loc>http://doc.perinatologie.nl/</loc>
+  </url>
+  
+  <url>
+    <loc>http://doc.perinatologie.nl/format/github/</loc>
+  </url>
+  
+  <url>
+    <loc>http://doc.perinatologie.nl/architecture/accounts/</loc>
+  </url>
+  
+  <url>
+    <loc>http://doc.perinatologie.nl/architecture/resources/</loc>
+  </url>
+  
+  <url>
+    <loc>http://doc.perinatologie.nl/implementation/authentication/</loc>
+  </url>
+  
+  <url>
+    <loc>http://doc.perinatologie.nl/format/elements/</loc>
+  </url>
+  
+  <url>
+    <loc>http://doc.perinatologie.nl/format/structure/</loc>
+  </url>
+  
+  <url>
+    <loc>http://doc.perinatologie.nl/implementation/transport/</loc>
+  </url>
+  
+  <url>
+    <loc>http://doc.perinatologie.nl/architecture/register/</loc>
+  </url>
+  
+  <url>
+    <loc>http://doc.perinatologie.nl/architecture/search/</loc>
+  </url>
+  
+  <url>
+    <loc>http://doc.perinatologie.nl/implementation/endpoint_2/</loc>
+  </url>
+  
+  <url>
+    <loc>http://doc.perinatologie.nl/implementation/endpoint_share_add/</loc>
+  </url>
+  
+  <url>
+    <loc>http://doc.perinatologie.nl/implementation/endpoint_share_remove/</loc>
+  </url>
+  
+  <url>
+    <loc>http://doc.perinatologie.nl/implementation/endpoint_4/</loc>
+  </url>
+  
+  <url>
+    <loc>http://doc.perinatologie.nl/implementation/endpoint_3/</loc>
+  </url>
+  
+  <url>
+    <loc>http://doc.perinatologie.nl/implementation/endpoint_1/</loc>
+  </url>
+  
+  <url>
+    <loc>http://doc.perinatologie.nl/implementation/endpoint_register/</loc>
+  </url>
+  
+  <url>
+    <loc>http://doc.perinatologie.nl/architecture/tokens/</loc>
+  </url>
+  
+  <url>
+    <loc>http://doc.perinatologie.nl/implementation/retrieving_resources/</loc>
+  </url>
+  
+  <url>
+    <loc>http://doc.perinatologie.nl/format/examples/</loc>
+  </url>
+  
+  <url>
+    <loc>http://doc.perinatologie.nl/architecture/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://doc.perinatologie.nl/format/</loc>
+  </url>
+  
+  <url>
+    <loc>http://doc.perinatologie.nl/format/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://doc.perinatologie.nl/implementation/</loc>
+  </url>
+  
+  <url>
+    <loc>http://doc.perinatologie.nl/implementation/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://doc.perinatologie.nl/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://doc.perinatologie.nl/architecture/</loc>
+  </url>
+  
+</urlset>

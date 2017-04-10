@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My blog</title>
-    <link>http://doc.perinatologie.nl/index.xml</link>
-    <description>Recent content on My blog</description>
+    <title>Perinatologie.nl documentation</title>
+    <link>https://doc.perinatologie.nl/index.xml</link>
+    <description>Recent content on Perinatologie.nl documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>nl-nl</language>
-    <atom:link href="http://doc.perinatologie.nl/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://doc.perinatologie.nl/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Inleiding</title>
-      <link>http://doc.perinatologie.nl/architecture/introduction/</link>
+      <link>https://doc.perinatologie.nl/architecture/introduction/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://doc.perinatologie.nl/architecture/introduction/</guid>
+      <guid>https://doc.perinatologie.nl/architecture/introduction/</guid>
       <description>&lt;p&gt;Dit document beschrijft op hoog niveau de architectuur van de Hub v3.&lt;/p&gt;
 
 &lt;p&gt;In de volgende hoofdstukken worden de volgende concepten toegelicht:&lt;/p&gt;
@@ -43,10 +43,10 @@
     
     <item>
       <title>Inleiding</title>
-      <link>http://doc.perinatologie.nl/format/introduction/</link>
+      <link>https://doc.perinatologie.nl/format/introduction/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://doc.perinatologie.nl/format/introduction/</guid>
+      <guid>https://doc.perinatologie.nl/format/introduction/</guid>
       <description>&lt;p&gt;Dit document wordt het document formaat en dataset voor resources van het type &lt;code&gt;hub/dossier&lt;/code&gt; beschreven.&lt;/p&gt;
 
 &lt;p&gt;Op de Hub heeft elk aangemelde resource (dossier) een bepaald type.&lt;/p&gt;
@@ -80,10 +80,10 @@ Het bied de mogelijkheid om data elementen te benoemen volgens afgesproken codes
     
     <item>
       <title>Inleiding</title>
-      <link>http://doc.perinatologie.nl/implementation/introduction/</link>
+      <link>https://doc.perinatologie.nl/implementation/introduction/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://doc.perinatologie.nl/implementation/introduction/</guid>
+      <guid>https://doc.perinatologie.nl/implementation/introduction/</guid>
       <description>
 
 &lt;h2 id=&#34;inleiding&#34;&gt;Inleiding&lt;/h2&gt;
@@ -131,10 +131,10 @@ Het bied de mogelijkheid om data elementen te benoemen volgens afgesproken codes
     
     <item>
       <title>Welkom</title>
-      <link>http://doc.perinatologie.nl/</link>
+      <link>https://doc.perinatologie.nl/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://doc.perinatologie.nl/</guid>
+      <guid>https://doc.perinatologie.nl/</guid>
       <description>&lt;p&gt;Welkom op de PeriHub technische documentatie website.&lt;/p&gt;
 
 &lt;p&gt;Gebruik de linker navigatie balk om de verschillende documenten in te zien.&lt;/p&gt;
@@ -143,10 +143,10 @@ Het bied de mogelijkheid om data elementen te benoemen volgens afgesproken codes
     
     <item>
       <title>Github projecten</title>
-      <link>http://doc.perinatologie.nl/format/github/</link>
+      <link>https://doc.perinatologie.nl/format/github/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://doc.perinatologie.nl/format/github/</guid>
+      <guid>https://doc.perinatologie.nl/format/github/</guid>
       <description>
 
 &lt;p&gt;De dataset definities worden als open-source projecten beheerd via &lt;a href=&#34;https://github.com&#34;&gt;github.com&lt;/a&gt;.&lt;/p&gt;
@@ -189,10 +189,10 @@ te downloaden en opnieuw genereren.&lt;/p&gt;
     
     <item>
       <title>Accounts</title>
-      <link>http://doc.perinatologie.nl/architecture/accounts/</link>
+      <link>https://doc.perinatologie.nl/architecture/accounts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://doc.perinatologie.nl/architecture/accounts/</guid>
+      <guid>https://doc.perinatologie.nl/architecture/accounts/</guid>
       <description>
 
 &lt;h2 id=&#34;accounts&#34;&gt;Accounts&lt;/h2&gt;
@@ -219,10 +219,10 @@ te downloaden en opnieuw genereren.&lt;/p&gt;
     
     <item>
       <title>Resources</title>
-      <link>http://doc.perinatologie.nl/architecture/resources/</link>
+      <link>https://doc.perinatologie.nl/architecture/resources/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://doc.perinatologie.nl/architecture/resources/</guid>
+      <guid>https://doc.perinatologie.nl/architecture/resources/</guid>
       <description>
 
 &lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
@@ -296,10 +296,10 @@ Een verloskundige praktijk (organization account) kan een dossier delen met een 
     
     <item>
       <title>Authenticatie</title>
-      <link>http://doc.perinatologie.nl/implementation/authentication/</link>
+      <link>https://doc.perinatologie.nl/implementation/authentication/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://doc.perinatologie.nl/implementation/authentication/</guid>
+      <guid>https://doc.perinatologie.nl/implementation/authentication/</guid>
       <description>&lt;p&gt;Om aan te sluiten op de Hub heeft een organisatie een eigen Hub Account nodig. Deze zijn te verkrijgen via www.perinatologie.nl&lt;/p&gt;
 
 &lt;p&gt;Voor elk Hub Account kunnen 1 of meerdere API Keys worden uitgegeven. Een API Key geeft toegang tot de dossiers die gedeeld zijn met het bijbehorende account.&lt;/p&gt;
@@ -312,10 +312,10 @@ Een verloskundige praktijk (organization account) kan een dossier delen met een 
     
     <item>
       <title>Elementen</title>
-      <link>http://doc.perinatologie.nl/format/elements/</link>
+      <link>https://doc.perinatologie.nl/format/elements/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://doc.perinatologie.nl/format/elements/</guid>
+      <guid>https://doc.perinatologie.nl/format/elements/</guid>
       <description>
 
 &lt;h2 id=&#34;het-resource-element&#34;&gt;Het &lt;code&gt;resource&lt;/code&gt; element&lt;/h2&gt;
@@ -405,10 +405,10 @@ De value elementen bevatten de daadwerkelijke gegevens.&lt;/p&gt;
     
     <item>
       <title>Structuur</title>
-      <link>http://doc.perinatologie.nl/format/structure/</link>
+      <link>https://doc.perinatologie.nl/format/structure/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://doc.perinatologie.nl/format/structure/</guid>
+      <guid>https://doc.perinatologie.nl/format/structure/</guid>
       <description>&lt;p&gt;Dit formaat bevat 1 client element, met daarbinnen een reeks ‘value’ elementen, welke informatie over de client bevatten.&lt;/p&gt;
 
 &lt;p&gt;Elke value element bevat een &lt;code&gt;label&lt;/code&gt; attribuut (tbv eenvoudige weergave), een daadwerkelijke &lt;code&gt;value&lt;/code&gt; attribuut, en in veel gevallen een “keyid”.&lt;/p&gt;
@@ -435,10 +435,10 @@ De value elementen bevatten de daadwerkelijke gegevens.&lt;/p&gt;
     
     <item>
       <title>Transport</title>
-      <link>http://doc.perinatologie.nl/implementation/transport/</link>
+      <link>https://doc.perinatologie.nl/implementation/transport/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://doc.perinatologie.nl/implementation/transport/</guid>
+      <guid>https://doc.perinatologie.nl/implementation/transport/</guid>
       <description>&lt;p&gt;De API v3 wordt aangeboden als eenvoudige https + xml API.
 Er zijn 2 urls van belang:&lt;/p&gt;
 
@@ -464,13 +464,13 @@ Er zijn 2 urls van belang:&lt;/p&gt;
     
     <item>
       <title>Resources registreren</title>
-      <link>http://doc.perinatologie.nl/architecture/register/</link>
+      <link>https://doc.perinatologie.nl/architecture/register/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://doc.perinatologie.nl/architecture/register/</guid>
+      <guid>https://doc.perinatologie.nl/architecture/register/</guid>
       <description>&lt;p&gt;Een Provider kan een nieuw resource aanmelden op de Hub ovv het Resource Type en aanvullende meta-data (Resource Properties) zoals bijvoorbeeld &lt;code&gt;client_bsn&lt;/code&gt;, &lt;code&gt;gravida&lt;/code&gt;, etc.&lt;/p&gt;
 
-&lt;p&gt;Tegelijkertijd bevat de aanmelding een lijst van &lt;a href=&#34;http://doc.perinatologie.nl/architectuur/resources/#resource-shares&#34;&gt;Resource Shares&lt;/a&gt;: Een lijst van identifiers van accounts waarmee het Resource gedeeld moet worden. Als Identifiers kunnen verschillende Identifier Types worden meegestuurd waarmee de Hub de accounts kan vinden. Veelal is dit een accountName, accountUuid of AGB code.&lt;/p&gt;
+&lt;p&gt;Tegelijkertijd bevat de aanmelding een lijst van &lt;a href=&#34;https://doc.perinatologie.nl/architectuur/resources/#resource-shares&#34;&gt;Resource Shares&lt;/a&gt;: Een lijst van identifiers van accounts waarmee het Resource gedeeld moet worden. Als Identifiers kunnen verschillende Identifier Types worden meegestuurd waarmee de Hub de accounts kan vinden. Veelal is dit een accountName, accountUuid of AGB code.&lt;/p&gt;
 
 &lt;p&gt;Elk Hub Account kan meerdere Identifiers bevatten waardoor deze gevonden kunnen worden.&lt;/p&gt;
 </description>
@@ -478,10 +478,10 @@ Er zijn 2 urls van belang:&lt;/p&gt;
     
     <item>
       <title>Resources zoeken</title>
-      <link>http://doc.perinatologie.nl/architecture/search/</link>
+      <link>https://doc.perinatologie.nl/architecture/search/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://doc.perinatologie.nl/architecture/search/</guid>
+      <guid>https://doc.perinatologie.nl/architecture/search/</guid>
       <description>&lt;p&gt;Als eerste stuurt de bevrager een verzoek aan de Hub om resources te vinden welke gedeeld zijn met de bevrager. De bevrager kan zoeken op alle resource eigenschappen. In het geval van een hub/dossier zal dit veelal zijn obv &lt;code&gt;client_bsn&lt;/code&gt; en &lt;code&gt;reference&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;De zoekresultaten bevatten alle dossiers die gedeeld zijn met de accounts van de bevrager.
@@ -493,10 +493,10 @@ Elk resultaat bevat ook een provider URL en een Token.&lt;/p&gt;
     
     <item>
       <title>[GET] /v3/resources/{resourceKey}</title>
-      <link>http://doc.perinatologie.nl/implementation/endpoint_2/</link>
+      <link>https://doc.perinatologie.nl/implementation/endpoint_2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://doc.perinatologie.nl/implementation/endpoint_2/</guid>
+      <guid>https://doc.perinatologie.nl/implementation/endpoint_2/</guid>
       <description>&lt;p&gt;Wanneer een resourceKey obv eerdere requests bekend is kan ook direct (zonder zoekopdracht) de laatste details van de resource opgevraagd worden.&lt;/p&gt;
 
 &lt;p&gt;Een voorbeeld response:&lt;/p&gt;
@@ -521,10 +521,10 @@ Elk resultaat bevat ook een provider URL en een Token.&lt;/p&gt;
     
     <item>
       <title>[GET] /v3/resources/{resourceKey}/add-share/{accountName}/{permission}</title>
-      <link>http://doc.perinatologie.nl/implementation/endpoint_share_add/</link>
+      <link>https://doc.perinatologie.nl/implementation/endpoint_share_add/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://doc.perinatologie.nl/implementation/endpoint_share_add/</guid>
+      <guid>https://doc.perinatologie.nl/implementation/endpoint_share_add/</guid>
       <description>&lt;p&gt;Nadat een resource is aangemeld kan deze worden gedeeld met andere Hub accounts.&lt;/p&gt;
 
 &lt;p&gt;De URL bevat een accountName waarmee het betreffende resource gedeeld mag worden. De &lt;code&gt;permission&lt;/code&gt; parameter bevat de gegevens die aangeven wat er precies gedeeld mag worden igv selectief delen. Standaard kan hier de permission &lt;code&gt;full&lt;/code&gt; worden gebruikt.&lt;/p&gt;

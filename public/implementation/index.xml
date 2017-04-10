@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Implementations on My blog</title>
-    <link>http://doc.perinatologie.nl/implementation/index.xml</link>
-    <description>Recent content in Implementations on My blog</description>
+    <title>Implementations on Perinatologie.nl documentation</title>
+    <link>https://doc.perinatologie.nl/implementation/index.xml</link>
+    <description>Recent content in Implementations on Perinatologie.nl documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>nl-nl</language>
-    <atom:link href="http://doc.perinatologie.nl/implementation/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://doc.perinatologie.nl/implementation/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Implementatie handleiding</title>
-      <link>http://doc.perinatologie.nl/implementation/</link>
+      <link>https://doc.perinatologie.nl/implementation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://doc.perinatologie.nl/implementation/</guid>
+      <guid>https://doc.perinatologie.nl/implementation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Inleiding</title>
-      <link>http://doc.perinatologie.nl/implementation/introduction/</link>
+      <link>https://doc.perinatologie.nl/implementation/introduction/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://doc.perinatologie.nl/implementation/introduction/</guid>
+      <guid>https://doc.perinatologie.nl/implementation/introduction/</guid>
       <description>
 
 &lt;h2 id=&#34;inleiding&#34;&gt;Inleiding&lt;/h2&gt;
@@ -70,10 +70,10 @@
     
     <item>
       <title>Authenticatie</title>
-      <link>http://doc.perinatologie.nl/implementation/authentication/</link>
+      <link>https://doc.perinatologie.nl/implementation/authentication/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://doc.perinatologie.nl/implementation/authentication/</guid>
+      <guid>https://doc.perinatologie.nl/implementation/authentication/</guid>
       <description>&lt;p&gt;Om aan te sluiten op de Hub heeft een organisatie een eigen Hub Account nodig. Deze zijn te verkrijgen via www.perinatologie.nl&lt;/p&gt;
 
 &lt;p&gt;Voor elk Hub Account kunnen 1 of meerdere API Keys worden uitgegeven. Een API Key geeft toegang tot de dossiers die gedeeld zijn met het bijbehorende account.&lt;/p&gt;
@@ -86,10 +86,10 @@
     
     <item>
       <title>Transport</title>
-      <link>http://doc.perinatologie.nl/implementation/transport/</link>
+      <link>https://doc.perinatologie.nl/implementation/transport/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://doc.perinatologie.nl/implementation/transport/</guid>
+      <guid>https://doc.perinatologie.nl/implementation/transport/</guid>
       <description>&lt;p&gt;De API v3 wordt aangeboden als eenvoudige https + xml API.
 Er zijn 2 urls van belang:&lt;/p&gt;
 
@@ -115,10 +115,10 @@ Er zijn 2 urls van belang:&lt;/p&gt;
     
     <item>
       <title>[GET] /v3/resources/{resourceKey}</title>
-      <link>http://doc.perinatologie.nl/implementation/endpoint_2/</link>
+      <link>https://doc.perinatologie.nl/implementation/endpoint_2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://doc.perinatologie.nl/implementation/endpoint_2/</guid>
+      <guid>https://doc.perinatologie.nl/implementation/endpoint_2/</guid>
       <description>&lt;p&gt;Wanneer een resourceKey obv eerdere requests bekend is kan ook direct (zonder zoekopdracht) de laatste details van de resource opgevraagd worden.&lt;/p&gt;
 
 &lt;p&gt;Een voorbeeld response:&lt;/p&gt;
@@ -143,10 +143,10 @@ Er zijn 2 urls van belang:&lt;/p&gt;
     
     <item>
       <title>[GET] /v3/resources/{resourceKey}/add-share/{accountName}/{permission}</title>
-      <link>http://doc.perinatologie.nl/implementation/endpoint_share_add/</link>
+      <link>https://doc.perinatologie.nl/implementation/endpoint_share_add/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://doc.perinatologie.nl/implementation/endpoint_share_add/</guid>
+      <guid>https://doc.perinatologie.nl/implementation/endpoint_share_add/</guid>
       <description>&lt;p&gt;Nadat een resource is aangemeld kan deze worden gedeeld met andere Hub accounts.&lt;/p&gt;
 
 &lt;p&gt;De URL bevat een accountName waarmee het betreffende resource gedeeld mag worden. De &lt;code&gt;permission&lt;/code&gt; parameter bevat de gegevens die aangeven wat er precies gedeeld mag worden igv selectief delen. Standaard kan hier de permission &lt;code&gt;full&lt;/code&gt; worden gebruikt.&lt;/p&gt;
@@ -155,10 +155,10 @@ Er zijn 2 urls van belang:&lt;/p&gt;
     
     <item>
       <title>[GET] /v3/resources/{resourceKey}/remove-share/{accountName}</title>
-      <link>http://doc.perinatologie.nl/implementation/endpoint_share_remove/</link>
+      <link>https://doc.perinatologie.nl/implementation/endpoint_share_remove/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://doc.perinatologie.nl/implementation/endpoint_share_remove/</guid>
+      <guid>https://doc.perinatologie.nl/implementation/endpoint_share_remove/</guid>
       <description>&lt;p&gt;Nadat een resource is aangemeld kan deze worden gedeeld met andere Hub accounts.&lt;/p&gt;
 
 &lt;p&gt;De URL bevat een accountName waarmee het betreffende resource gedeeld mag worden. De &lt;code&gt;permission&lt;/code&gt; parameter bevat de gegevens die aangeven wat er precies gedeeld mag worden igv selectief delen. Standaard kan hier de permission &lt;code&gt;full&lt;/code&gt; worden gebruikt.&lt;/p&gt;
@@ -167,10 +167,10 @@ Er zijn 2 urls van belang:&lt;/p&gt;
     
     <item>
       <title>[GET] /v3/resources/{resourceKey}/shares</title>
-      <link>http://doc.perinatologie.nl/implementation/endpoint_4/</link>
+      <link>https://doc.perinatologie.nl/implementation/endpoint_4/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://doc.perinatologie.nl/implementation/endpoint_4/</guid>
+      <guid>https://doc.perinatologie.nl/implementation/endpoint_4/</guid>
       <description>&lt;p&gt;Dit end-point geeft een actueel overzicht van alle accounts waarmee de betreffende resource is gedeeld.&lt;/p&gt;
 
 &lt;p&gt;Een voorbeeld response:&lt;/p&gt;
@@ -195,10 +195,10 @@ Er zijn 2 urls van belang:&lt;/p&gt;
     
     <item>
       <title>[GET] /v3/resources/{resourceKey}/source</title>
-      <link>http://doc.perinatologie.nl/implementation/endpoint_3/</link>
+      <link>https://doc.perinatologie.nl/implementation/endpoint_3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://doc.perinatologie.nl/implementation/endpoint_3/</guid>
+      <guid>https://doc.perinatologie.nl/implementation/endpoint_3/</guid>
       <description>&lt;p&gt;Om de daadwerkelijke bron data op te vragen kan via de &lt;code&gt;/source&lt;/code&gt; sub-url alle benodigde informatie worden opgevraagd obv een resourceKey.&lt;/p&gt;
 
 &lt;p&gt;Een voorbeeld response:&lt;/p&gt;
@@ -241,10 +241,10 @@ exp: huidige timestamp + verloop duur (configureerbaar, momenteel 1 uur).&lt;/p&
     
     <item>
       <title>[GET] /v3/resources?k=v</title>
-      <link>http://doc.perinatologie.nl/implementation/endpoint_1/</link>
+      <link>https://doc.perinatologie.nl/implementation/endpoint_1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://doc.perinatologie.nl/implementation/endpoint_1/</guid>
+      <guid>https://doc.perinatologie.nl/implementation/endpoint_1/</guid>
       <description>&lt;p&gt;Dit end-point wordt gebruikt om obv bijvoorbeeld een BSN na te gaan welke dossiers er met de opvragende organisatie gedeeld zijn.&lt;/p&gt;
 
 &lt;p&gt;Mbv URL Query parameters kan er gefilterd worden op alle properties. Er kan dus ook gezocht worden op bijvoorbeeld geboortedatum of atermedatum (edd).&lt;/p&gt;
@@ -288,10 +288,10 @@ end_at: Einde zorg datum bij provider (YYYYDDMM) indien van toepassing&lt;/p&gt;
     
     <item>
       <title>[POST] /v3/register</title>
-      <link>http://doc.perinatologie.nl/implementation/endpoint_register/</link>
+      <link>https://doc.perinatologie.nl/implementation/endpoint_register/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://doc.perinatologie.nl/implementation/endpoint_register/</guid>
+      <guid>https://doc.perinatologie.nl/implementation/endpoint_register/</guid>
       <description>&lt;p&gt;Dit end-point wordt gebruikt om een dossier aan te melden of bij te werken in de Hub.&lt;/p&gt;
 
 &lt;p&gt;De request-body bevat als post-data de nieuwe resource data. Een voorbeeld request body:&lt;/p&gt;
@@ -326,10 +326,10 @@ Details van deze properties komen overeen met de omschrijving in voorgaande hoof
     
     <item>
       <title>Resource ophalen</title>
-      <link>http://doc.perinatologie.nl/implementation/retrieving_resources/</link>
+      <link>https://doc.perinatologie.nl/implementation/retrieving_resources/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://doc.perinatologie.nl/implementation/retrieving_resources/</guid>
+      <guid>https://doc.perinatologie.nl/implementation/retrieving_resources/</guid>
       <description>
 
 &lt;h2 id=&#34;opvragen-dossier-bij-doelsysteem&#34;&gt;Opvragen dossier bij doelsysteem&lt;/h2&gt;

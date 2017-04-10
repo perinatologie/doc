@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Formats on My blog</title>
-    <link>http://doc.perinatologie.nl/format/index.xml</link>
-    <description>Recent content in Formats on My blog</description>
+    <title>Formats on Perinatologie.nl documentation</title>
+    <link>https://doc.perinatologie.nl/format/index.xml</link>
+    <description>Recent content in Formats on Perinatologie.nl documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>nl-nl</language>
-    <atom:link href="http://doc.perinatologie.nl/format/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://doc.perinatologie.nl/format/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Formaat en Dataset</title>
-      <link>http://doc.perinatologie.nl/format/</link>
+      <link>https://doc.perinatologie.nl/format/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://doc.perinatologie.nl/format/</guid>
+      <guid>https://doc.perinatologie.nl/format/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Inleiding</title>
-      <link>http://doc.perinatologie.nl/format/introduction/</link>
+      <link>https://doc.perinatologie.nl/format/introduction/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://doc.perinatologie.nl/format/introduction/</guid>
+      <guid>https://doc.perinatologie.nl/format/introduction/</guid>
       <description>&lt;p&gt;Dit document wordt het document formaat en dataset voor resources van het type &lt;code&gt;hub/dossier&lt;/code&gt; beschreven.&lt;/p&gt;
 
 &lt;p&gt;Op de Hub heeft elk aangemelde resource (dossier) een bepaald type.&lt;/p&gt;
@@ -56,10 +56,10 @@ Het bied de mogelijkheid om data elementen te benoemen volgens afgesproken codes
     
     <item>
       <title>Github projecten</title>
-      <link>http://doc.perinatologie.nl/format/github/</link>
+      <link>https://doc.perinatologie.nl/format/github/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://doc.perinatologie.nl/format/github/</guid>
+      <guid>https://doc.perinatologie.nl/format/github/</guid>
       <description>
 
 &lt;p&gt;De dataset definities worden als open-source projecten beheerd via &lt;a href=&#34;https://github.com&#34;&gt;github.com&lt;/a&gt;.&lt;/p&gt;
@@ -102,10 +102,10 @@ te downloaden en opnieuw genereren.&lt;/p&gt;
     
     <item>
       <title>Elementen</title>
-      <link>http://doc.perinatologie.nl/format/elements/</link>
+      <link>https://doc.perinatologie.nl/format/elements/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://doc.perinatologie.nl/format/elements/</guid>
+      <guid>https://doc.perinatologie.nl/format/elements/</guid>
       <description>
 
 &lt;h2 id=&#34;het-resource-element&#34;&gt;Het &lt;code&gt;resource&lt;/code&gt; element&lt;/h2&gt;
@@ -195,10 +195,10 @@ De value elementen bevatten de daadwerkelijke gegevens.&lt;/p&gt;
     
     <item>
       <title>Structuur</title>
-      <link>http://doc.perinatologie.nl/format/structure/</link>
+      <link>https://doc.perinatologie.nl/format/structure/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://doc.perinatologie.nl/format/structure/</guid>
+      <guid>https://doc.perinatologie.nl/format/structure/</guid>
       <description>&lt;p&gt;Dit formaat bevat 1 client element, met daarbinnen een reeks ‘value’ elementen, welke informatie over de client bevatten.&lt;/p&gt;
 
 &lt;p&gt;Elke value element bevat een &lt;code&gt;label&lt;/code&gt; attribuut (tbv eenvoudige weergave), een daadwerkelijke &lt;code&gt;value&lt;/code&gt; attribuut, en in veel gevallen een “keyid”.&lt;/p&gt;
@@ -225,10 +225,10 @@ De value elementen bevatten de daadwerkelijke gegevens.&lt;/p&gt;
     
     <item>
       <title>Voorbeelden</title>
-      <link>http://doc.perinatologie.nl/format/examples/</link>
+      <link>https://doc.perinatologie.nl/format/examples/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://doc.perinatologie.nl/format/examples/</guid>
+      <guid>https://doc.perinatologie.nl/format/examples/</guid>
       <description>&lt;p&gt;Op Github worden in de perinatologie/realm-peri22x repository in de directory &lt;code&gt;resources/&lt;/code&gt; een
 aantal voorbeeld bestanden beheerd en bijgewerkt naar de laatste stand van zaken.&lt;/p&gt;
 

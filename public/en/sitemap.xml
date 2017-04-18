@@ -14,6 +14,10 @@
   </url>
   
   <url>
+    <loc>https://doc.perinatologie.nl/messagebox/introduction/</loc>
+  </url>
+  
+  <url>
     <loc>https://doc.perinatologie.nl/</loc>
   </url>
   
@@ -54,6 +58,22 @@
   </url>
   
   <url>
+    <loc>https://doc.perinatologie.nl/messagebox/endpoint_1/</loc>
+  </url>
+  
+  <url>
+    <loc>https://doc.perinatologie.nl/messagebox/endpoint_3/</loc>
+  </url>
+  
+  <url>
+    <loc>https://doc.perinatologie.nl/messagebox/endpoint_2/</loc>
+  </url>
+  
+  <url>
+    <loc>https://doc.perinatologie.nl/messagebox/endpoint_4/</loc>
+  </url>
+  
+  <url>
     <loc>https://doc.perinatologie.nl/implementation/endpoint_2/</loc>
   </url>
   
@@ -75,6 +95,14 @@
   
   <url>
     <loc>https://doc.perinatologie.nl/implementation/endpoint_1/</loc>
+  </url>
+  
+  <url>
+    <loc>https://doc.perinatologie.nl/messagebox/endpoint_6/</loc>
+  </url>
+  
+  <url>
+    <loc>https://doc.perinatologie.nl/messagebox/endpoint_5/</loc>
   </url>
   
   <url>
@@ -113,6 +141,15 @@
   
   <url>
     <loc>https://doc.perinatologie.nl/implementation/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://doc.perinatologie.nl/messagebox/</loc>
+  </url>
+  
+  <url>
+    <loc>https://doc.perinatologie.nl/messagebox/</loc>
     <priority>0</priority>
   </url>
   

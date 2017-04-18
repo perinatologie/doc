@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 
     
-    <title>Voorbeelden</title>
+    <title>Inleiding</title>
     <link href="https://doc.perinatologie.nl//css/nucleus.css" rel="stylesheet">
     <link href="https://doc.perinatologie.nl//css/font-awesome.min.css" rel="stylesheet">
     <link href="https://doc.perinatologie.nl//css/hybrid.css" rel="stylesheet">
@@ -25,7 +25,7 @@
     <link href="/css/perinatologie.css" rel="stylesheet">
 
   </head>
-  <body class="" data-url="/format/examples/">
+  <body class="" data-url="/messagebox/introduction/">
     <nav id="sidebar">
   <div id="header-wrapper">
     <div id="header">
@@ -148,7 +148,7 @@
       
       
 
-      <li class="dd-item  parent" data-nav-id="/format/">
+      <li class="dd-item  " data-nav-id="/format/">
         <a href="/format/">
           <span>
             
@@ -194,7 +194,7 @@
           
           
           
-            <li class="dd-item active" data-nav-id="/format/examples/">
+            <li class="dd-item " data-nav-id="/format/examples/">
               <a href="/format/examples/">
                 <span>Voorbeelden     </i></span>
               </a>
@@ -328,7 +328,7 @@
       
       
 
-      <li class="dd-item  " data-nav-id="/messagebox/">
+      <li class="dd-item  parent" data-nav-id="/messagebox/">
         <a href="/messagebox/">
           <span>
             
@@ -342,7 +342,7 @@
           
           
           
-            <li class="dd-item " data-nav-id="/messagebox/introduction/">
+            <li class="dd-item active" data-nav-id="/messagebox/introduction/">
               <a href="/messagebox/introduction/">
                 <span>Inleiding     </i></span>
               </a>
@@ -431,17 +431,17 @@
                   
                 
                   
-                    
-                    
-                <a href="/format/" itemprop="url"><span itemprop="title">Formaat en Dataset</span></a> <i class="fa fa-angle-right"></i>
-                    
-                  
                 
                   
                 
                   
+                    
+                    
+                <a href="/messagebox/" itemprop="url"><span itemprop="title">MessageBox</span></a> <i class="fa fa-angle-right"></i>
+                    
+                  
                 
-                <span itemprop="title"> Voorbeelden</span>
+                <span itemprop="title"> Inleiding</span>
               </div>
               
 
@@ -449,15 +449,50 @@
             
     	        <div id="body-inner">
                 
-                <h1>Voorbeelden</h1>
+                <h1>Inleiding</h1>
                 
 
-<p>Op Github worden in de perinatologie/realm-peri22x repository in de directory <code>resources/</code> een
-aantal voorbeeld bestanden beheerd en bijgewerkt naar de laatste stand van zaken.</p>
+
+
+<h2 id="inleiding">Inleiding</h2>
+
+<p>De PeriHub ondersteunt zowel Pull als Push verkeer.</p>
+
+<p>Tbv Push verkeer wordt gebruik gemaakt van de dienst &ldquo;MessageBox&rdquo;, onderdeel van Perinatologie.nl, en onderdeel
+van de PeriHub infrastructuur.</p>
+
+<p>Gebruikers en applicaties kunnen gebruik maken van MessageBox mbv dezelfde gebruikersnaam/wachtwoorden en API keys
+als voor alle andere diensten van Perinatologie.nl</p>
+
+<p>Ook zijn de adressen van de berichten boxen gelijk aan de accountnamen binnen perinatologie.nl</p>
+
+<p>MessageBox is vergelijkbaar met andere (zorg) berichtenboxen zoals Secure Email, Zorgmail, e.d. met een aantal voordelen:</p>
 
 <ul>
-<li>Link: <a href="https://github.com/perinatologie/realm-peri22x/tree/master/resources">https://github.com/perinatologie/realm-peri22x/tree/master/resources</a></li>
+<li>Uniforme gebruikersnaam/wachtwoorden en API keys tov andere Perinatologie.nl diensten</li>
+<li>Kostenloos voor alle deelnemende partijen</li>
+<li>Mogelijkheid voor versturen van bijlagen zoals PDFs (rodebandkaarten), DICOM beelden e.d.</li>
+<li>Communicatie niet alleen tussen zorgverleners, maar ook andere personen en instanties zoals de client zelf, statistiek beheerders, onderzoekers, e.d.</li>
+<li>Web-interface met ondersteuning voor de gangbare formaten die binnen het Perinatologie.nl netwerk worden uitgewisseld.</li>
 </ul>
+
+<h2 id="hoe-werkt-het">Hoe werkt het?</h2>
+
+<p>Het concept is erg eenvoudig: Een verzendende applicatie stuurt een uitgaand request naar de MessageBox API ovv content en geadresseerde.</p>
+
+<p>De geadresseerde stuurt een uitgaand request om nieuwe berichten headers op te vragen. Om de content op te halen wordt een tweede request verstuurd.</p>
+
+<p>In deze opzet is al het verkeer uitgaand, wat voor firewalls en andere security maatregelen eenvoudiger te implementeren
+kan zijn.</p>
+
+<h2 id="boxen-en-adressen">Boxen en adressen</h2>
+
+<p>Binnen de PeriHub bestaan verschillende account-typen: user, organization en apikey.</p>
+
+<p>De accountName is hierin altijd uniek, en wordt daarom ook gebruikt voor adressering.</p>
+
+<p>Elk account kan mogelijk 1 of meerdere berichtenboxen hebben. De eerste box is altijd beschikbaar, en heeft de naam <code>default</code>.
+Een gebruiker met naam <code>test</code> heeft dus een box die geadresseerd kan worden als <code>test/default</code>.</p>
 
 
       

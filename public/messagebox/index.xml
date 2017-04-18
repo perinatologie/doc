@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Messageboxes on Perinatologie.nl documentation</title>
+    <link>https://doc.perinatologie.nl/messagebox/index.xml</link>
+    <description>Recent content in Messageboxes on Perinatologie.nl documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>nl-nl</language>
+    <atom:link href="https://doc.perinatologie.nl/messagebox/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>MessageBox</title>
+      <link>https://doc.perinatologie.nl/messagebox/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://doc.perinatologie.nl/messagebox/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Inleiding</title>
+      <link>https://doc.perinatologie.nl/messagebox/introduction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://doc.perinatologie.nl/messagebox/introduction/</guid>
+      <description>
+
+&lt;h2 id=&#34;inleiding&#34;&gt;Inleiding&lt;/h2&gt;
+
+&lt;p&gt;De PeriHub ondersteunt zowel Pull als Push verkeer.&lt;/p&gt;
+
+&lt;p&gt;Tbv Push verkeer wordt gebruik gemaakt van de dienst &amp;ldquo;MessageBox&amp;rdquo;, onderdeel van Perinatologie.nl, en onderdeel
+van de PeriHub infrastructuur.&lt;/p&gt;
+
+&lt;p&gt;Gebruikers en applicaties kunnen gebruik maken van MessageBox mbv dezelfde gebruikersnaam/wachtwoorden en API keys
+als voor alle andere diensten van Perinatologie.nl&lt;/p&gt;
+
+&lt;p&gt;Ook zijn de adressen van de berichten boxen gelijk aan de accountnamen binnen perinatologie.nl&lt;/p&gt;
+
+&lt;p&gt;MessageBox is vergelijkbaar met andere (zorg) berichtenboxen zoals Secure Email, Zorgmail, e.d. met een aantal voordelen:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Uniforme gebruikersnaam/wachtwoorden en API keys tov andere Perinatologie.nl diensten&lt;/li&gt;
+&lt;li&gt;Kostenloos voor alle deelnemende partijen&lt;/li&gt;
+&lt;li&gt;Mogelijkheid voor versturen van bijlagen zoals PDFs (rodebandkaarten), DICOM beelden e.d.&lt;/li&gt;
+&lt;li&gt;Communicatie niet alleen tussen zorgverleners, maar ook andere personen en instanties zoals de client zelf, statistiek beheerders, onderzoekers, e.d.&lt;/li&gt;
+&lt;li&gt;Web-interface met ondersteuning voor de gangbare formaten die binnen het Perinatologie.nl netwerk worden uitgewisseld.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;hoe-werkt-het&#34;&gt;Hoe werkt het?&lt;/h2&gt;
+
+&lt;p&gt;Het concept is erg eenvoudig: Een verzendende applicatie stuurt een uitgaand request naar de MessageBox API ovv content en geadresseerde.&lt;/p&gt;
+
+&lt;p&gt;De geadresseerde stuurt een uitgaand request om nieuwe berichten headers op te vragen. Om de content op te halen wordt een tweede request verstuurd.&lt;/p&gt;
+
+&lt;p&gt;In deze opzet is al het verkeer uitgaand, wat voor firewalls en andere security maatregelen eenvoudiger te implementeren
+kan zijn.&lt;/p&gt;
+
+&lt;h2 id=&#34;boxen-en-adressen&#34;&gt;Boxen en adressen&lt;/h2&gt;
+
+&lt;p&gt;Binnen de PeriHub bestaan verschillende account-typen: user, organization en apikey.&lt;/p&gt;
+
+&lt;p&gt;De accountName is hierin altijd uniek, en wordt daarom ook gebruikt voor adressering.&lt;/p&gt;
+
+&lt;p&gt;Elk account kan mogelijk 1 of meerdere berichtenboxen hebben. De eerste box is altijd beschikbaar, en heeft de naam &lt;code&gt;default&lt;/code&gt;.
+Een gebruiker met naam &lt;code&gt;test&lt;/code&gt; heeft dus een box die geadresseerd kan worden als &lt;code&gt;test/default&lt;/code&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[GET] /api/v1/{accountName}/{boxName}/messages</title>
+      <link>https://doc.perinatologie.nl/messagebox/endpoint_1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://doc.perinatologie.nl/messagebox/endpoint_1/</guid>
+      <description>&lt;p&gt;Dit end-point wordt gebruikt om voor een betreffende box de on-gearchiveerde message headers op te vragen.&lt;/p&gt;
+
+&lt;p&gt;Een voorbeeld response:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;[
+    {
+        &amp;quot;id&amp;quot;: &amp;quot;acKZVvr3sc6x9MT2k-9Q0Q&amp;quot;,
+        &amp;quot;subject&amp;quot;: &amp;quot;Dit is een voorbeeld bericht&amp;quot;,
+        &amp;quot;content_type&amp;quot;: &amp;quot;text/markdown&amp;quot;,
+        &amp;quot;created_at&amp;quot;: &amp;quot;2017-03-01 08:36:13&amp;quot;,
+        &amp;quot;seen_at&amp;quot;: null,
+        &amp;quot;archived_at&amp;quot;: null,
+        &amp;quot;from_username&amp;quot;: &amp;quot;johnjohnson&amp;quot;,
+        &amp;quot;metadata&amp;quot;: &amp;quot;important: true\r\ncolor: red&amp;quot;,
+        &amp;quot;from_name&amp;quot;: &amp;quot;default&amp;quot;,
+        &amp;quot;from_account&amp;quot;: &amp;quot;johnjohnson&amp;quot;
+    },
+    {
+        &amp;quot;id&amp;quot;: &amp;quot;x9MT2j3SQ0QacKZVvr3sc1&amp;quot;,
+        &amp;quot;subject&amp;quot;: &amp;quot;Dit is een tweede bericht&amp;quot;,
+        &amp;quot;content_type&amp;quot;: &amp;quot;text/markdown&amp;quot;,
+        &amp;quot;created_at&amp;quot;: &amp;quot;2017-03-01 09:12:54&amp;quot;,
+        &amp;quot;seen_at&amp;quot;: null,
+        &amp;quot;archived_at&amp;quot;: null,
+        &amp;quot;from_username&amp;quot;: &amp;quot;johnjohnson&amp;quot;,
+        &amp;quot;metadata&amp;quot;: &amp;quot;important: false&amp;quot;,
+        &amp;quot;from_name&amp;quot;: &amp;quot;default&amp;quot;,
+        &amp;quot;from_account&amp;quot;: &amp;quot;johnjohnson&amp;quot;
+    }
+]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Voor elk bericht worden de volgende velden teruggegeven:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;id: unieke id van dit bericht binnen het Perinatologie.nl netwerk&lt;/li&gt;
+&lt;li&gt;subject: bericht onderwerp, net als bij email.&lt;/li&gt;
+&lt;li&gt;content_type: soort content, bijvoorbeeld &lt;code&gt;text/markdown&lt;/code&gt;, &lt;code&gt;application/pdf&lt;/code&gt;, &lt;code&gt;text/plain&lt;/code&gt;, &lt;code&gt;hub/dossier&lt;/code&gt;, enz&lt;/li&gt;
+&lt;li&gt;seen_at: datum/tijd wanneer bericht voor &amp;rsquo;t eerst gezien is (de content opgehaald).&lt;/li&gt;
+&lt;li&gt;archived_at: datum/tijd wanneer bericht door gebruiker is gearchiveerd (na verwerking)&lt;/li&gt;
+&lt;li&gt;from_username: gebruikersnaam van de verzender&lt;/li&gt;
+&lt;li&gt;metadata: key/value pairs, zelf te bepalen, te gebruiken voor filtering, en applicatie specifieke doeleinden (koppelen dossier bijvoorbeeld)&lt;/li&gt;
+&lt;li&gt;from_name: box naam van verzender, tbv reply&lt;/li&gt;
+&lt;li&gt;from_accountname: account naam van verzender, tbv reply&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[GET] /api/v1/{accountName}/{boxName}/messages/{messageId}/archive</title>
+      <link>https://doc.perinatologie.nl/messagebox/endpoint_3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://doc.perinatologie.nl/messagebox/endpoint_3/</guid>
+      <description>&lt;p&gt;Archiveer een bericht&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[GET] /api/v1/{accountName}/{boxName}/messages/{messageId}/content</title>
+      <link>https://doc.perinatologie.nl/messagebox/endpoint_2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://doc.perinatologie.nl/messagebox/endpoint_2/</guid>
+      <description>&lt;p&gt;Dit end-point wordt gebruikt om de daadwerkelijke berichten inhoud op te halen.&lt;/p&gt;
+
+&lt;p&gt;De response geeft de rauwe bericht content terug, en hangt dus af van de &lt;code&gt;content_type&lt;/code&gt;.
+In sommige gevallen een text response, in anderen een PDF bijvoorbeeld.&lt;/p&gt;
+
+&lt;p&gt;Na ophalen van de content wordt bij de eerste keer automatisch de &lt;code&gt;seen_at&lt;/code&gt; van dit bericht gezet
+naar datum+tijd van dat moment.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[GET] /api/v1/{accountName}/{boxName}/messages/{messageId}/unarchive</title>
+      <link>https://doc.perinatologie.nl/messagebox/endpoint_4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://doc.perinatologie.nl/messagebox/endpoint_4/</guid>
+      <description>&lt;p&gt;De-archiveer een bericht&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[POST] /api/v1/{accountName}/{boxName}/messages/{messageId}/properties/add</title>
+      <link>https://doc.perinatologie.nl/messagebox/endpoint_6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://doc.perinatologie.nl/messagebox/endpoint_6/</guid>
+      <description>&lt;p&gt;Voeg een property toe aan de metadata van een bericht. Tbv applicatie-specifieke koppelingen en functionaliteit.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;name&amp;quot;: &amp;quot;color&amp;quot;,
+  &amp;quot;value&amp;quot;: &amp;quot;green&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[POST] /api/v1/{accountName}/{boxName}/send</title>
+      <link>https://doc.perinatologie.nl/messagebox/endpoint_5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://doc.perinatologie.nl/messagebox/endpoint_5/</guid>
+      <description>&lt;p&gt;Verzend een bericht. In de POST body worden de volgende gegevens meegestuurd in JSON formaat:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;from_username&amp;quot;: &amp;quot;johnjohnson&amp;quot;,
+  &amp;quot;to&amp;quot;: &amp;quot;jilljackson/default&amp;quot;,
+  &amp;quot;subject&amp;quot;: &amp;quot;Hallo Jill&amp;quot;,
+  &amp;quot;content&amp;quot;: &amp;quot;SGFsbG8gSmlsbCwgZGl0IGlzIGVlbiB2b29yYmVlbGQgYmVyaWNodC4=&amp;quot;,
+  &amp;quot;content_type&amp;quot;: &amp;quot;text/plain&amp;quot;,
+  &amp;quot;metadata&amp;quot;: &amp;quot;dGVzdDogdHJ1ZQ==&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Let op: de content en metadata worden in base64 formaat geencodeerd tbv ondersteuning
+van alle typen documenten.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
